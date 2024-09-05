@@ -45,89 +45,89 @@ class _EmptyListStoriesWidgetState extends State<EmptyListStoriesWidget> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          width: 50,
-          height: 50,
+          width: 50.0,
+          height: 50.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             shape: BoxShape.circle,
             border: Border.all(
               color: FlutterFlowTheme.of(context).alternate,
-              width: 2,
+              width: 2.0,
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.all(4),
+            padding: EdgeInsets.all(4.0),
             child: Icon(
               Icons.account_circle_outlined,
               color: FlutterFlowTheme.of(context).alternate,
-              size: 36,
+              size: 36.0,
             ),
           ),
         ),
         Container(
-          width: 50,
-          height: 50,
+          width: 50.0,
+          height: 50.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             shape: BoxShape.circle,
             border: Border.all(
               color: FlutterFlowTheme.of(context).alternate,
-              width: 2,
+              width: 2.0,
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.all(4),
+            padding: EdgeInsets.all(4.0),
             child: Icon(
               Icons.account_circle_outlined,
               color: FlutterFlowTheme.of(context).alternate,
-              size: 36,
+              size: 36.0,
             ),
           ),
         ),
         Container(
-          width: 50,
-          height: 50,
+          width: 50.0,
+          height: 50.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             shape: BoxShape.circle,
             border: Border.all(
               color: FlutterFlowTheme.of(context).alternate,
-              width: 2,
+              width: 2.0,
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.all(4),
+            padding: EdgeInsets.all(4.0),
             child: Icon(
               Icons.account_circle_outlined,
               color: FlutterFlowTheme.of(context).alternate,
-              size: 36,
+              size: 36.0,
             ),
           ),
         ),
         Container(
-          width: 50,
-          height: 50,
+          width: 50.0,
+          height: 50.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             shape: BoxShape.circle,
             border: Border.all(
               color: FlutterFlowTheme.of(context).alternate,
-              width: 2,
+              width: 2.0,
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.all(4),
+            padding: EdgeInsets.all(4.0),
             child: Icon(
               Icons.account_circle_outlined,
               color: FlutterFlowTheme.of(context).alternate,
-              size: 36,
+              size: 36.0,
             ),
           ),
         ),
       ]
-          .divide(SizedBox(width: 12))
-          .addToStart(SizedBox(width: 16))
-          .addToEnd(SizedBox(width: 16)),
+          .divide(SizedBox(width: 12.0))
+          .addToStart(SizedBox(width: 16.0))
+          .addToEnd(SizedBox(width: 16.0)),
     );
   }
 }

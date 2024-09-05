@@ -62,7 +62,7 @@ class _OnboardingAgeWidgetState extends State<OnboardingAgeWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 24, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 24.0, 0.0),
                   child: Text(
                     '1/5',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -75,17 +75,17 @@ class _OnboardingAgeWidgetState extends State<OnboardingAgeWidget> {
                 ),
               ],
               centerTitle: false,
-              elevation: 0,
+              elevation: 0.0,
             )
           : null,
       body: SafeArea(
         top: true,
         child: Align(
-          alignment: AlignmentDirectional(0, -1),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: double.infinity,
             constraints: BoxConstraints(
-              maxWidth: 870,
+              maxWidth: 870.0,
             ),
             decoration: BoxDecoration(),
             child: SingleChildScrollView(
@@ -103,21 +103,22 @@ class _OnboardingAgeWidgetState extends State<OnboardingAgeWidget> {
                         tablet: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 16.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                               borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(0),
-                                bottomRight: Radius.circular(0),
-                                topLeft: Radius.circular(12),
-                                topRight: Radius.circular(12),
+                                bottomLeft: Radius.circular(0.0),
+                                bottomRight: Radius.circular(0.0),
+                                topLeft: Radius.circular(12.0),
+                                topRight: Radius.circular(12.0),
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(16),
+                              padding: EdgeInsets.all(16.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,7 +134,7 @@ class _OnboardingAgeWidgetState extends State<OnboardingAgeWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 4, 0, 0),
+                                        0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       'Fill out your profile now in order to complete setup of your profile.',
                                       style: FlutterFlowTheme.of(context)
@@ -155,7 +156,8 @@ class _OnboardingAgeWidgetState extends State<OnboardingAgeWidget> {
                         desktop: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 0.0),
                           child: Text(
                             'Duuet, our medical app, is limited to users aged 18 and above for legal and regulatory compliance.',
                             style: FlutterFlowTheme.of(context)
@@ -169,7 +171,8 @@ class _OnboardingAgeWidgetState extends State<OnboardingAgeWidget> {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 10, 16, 0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 0.0),
                     child: TextFormField(
                       controller: _model.ageTextController,
                       focusNode: _model.ageFocusNode,
@@ -190,30 +193,30 @@ class _OnboardingAgeWidgetState extends State<OnboardingAgeWidget> {
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).alternate,
-                            width: 2,
+                            width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).primary,
-                            width: 2,
+                            width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         errorBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).error,
-                            width: 2,
+                            width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedErrorBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).error,
-                            width: 2,
+                            width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -226,7 +229,8 @@ class _OnboardingAgeWidgetState extends State<OnboardingAgeWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 40),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         await currentUserReference!
@@ -238,10 +242,12 @@ class _OnboardingAgeWidgetState extends State<OnboardingAgeWidget> {
                       },
                       text: 'Next',
                       options: FFButtonOptions(
-                        width: 230,
-                        height: 50,
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                        iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        width: 230.0,
+                        height: 50.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -249,12 +255,12 @@ class _OnboardingAgeWidgetState extends State<OnboardingAgeWidget> {
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),
-                        elevation: 2,
+                        elevation: 2.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
-                        borderRadius: BorderRadius.circular(40),
+                        borderRadius: BorderRadius.circular(40.0),
                       ),
                     ),
                   ),

@@ -3,18 +3,20 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'empty_list1_model.dart';
-export 'empty_list1_model.dart';
+import 'empty_list_others_concerns_model.dart';
+export 'empty_list_others_concerns_model.dart';
 
-class EmptyList1Widget extends StatefulWidget {
-  const EmptyList1Widget({super.key});
+class EmptyListOthersConcernsWidget extends StatefulWidget {
+  const EmptyListOthersConcernsWidget({super.key});
 
   @override
-  State<EmptyList1Widget> createState() => _EmptyList1WidgetState();
+  State<EmptyListOthersConcernsWidget> createState() =>
+      _EmptyListOthersConcernsWidgetState();
 }
 
-class _EmptyList1WidgetState extends State<EmptyList1Widget> {
-  late EmptyList1Model _model;
+class _EmptyListOthersConcernsWidgetState
+    extends State<EmptyListOthersConcernsWidget> {
+  late EmptyListOthersConcernsModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -25,7 +27,7 @@ class _EmptyList1WidgetState extends State<EmptyList1Widget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EmptyList1Model());
+    _model = createModel(context, () => EmptyListOthersConcernsModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -44,14 +46,14 @@ class _EmptyList1WidgetState extends State<EmptyList1Widget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
-          Icons.photo_library_outlined,
+          Icons.medical_services,
           color: FlutterFlowTheme.of(context).primary,
           size: 90.0,
         ),
         Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
           child: Text(
-            'No Posts',
+            'No Concerns',
             textAlign: TextAlign.center,
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   fontFamily: 'Outfit',
@@ -63,7 +65,7 @@ class _EmptyList1WidgetState extends State<EmptyList1Widget> {
         Padding(
           padding: EdgeInsetsDirectional.fromSTEB(32.0, 8.0, 32.0, 0.0),
           child: Text(
-            'It seems that there are no posts here. Check back later to see the latest stuff going on!',
+            'It seems there are no concerns for this user!',
             textAlign: TextAlign.center,
             style: FlutterFlowTheme.of(context).labelMedium.override(
                   fontFamily: 'Figtree',

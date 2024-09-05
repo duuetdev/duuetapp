@@ -95,35 +95,35 @@ class _PostModalViewWidgetState extends State<PostModalViewWidget>
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(12, 32, 12, 32),
+            padding: EdgeInsetsDirectional.fromSTEB(12.0, 32.0, 12.0, 32.0),
             child: Container(
               width: double.infinity,
               height: MediaQuery.sizeOf(context).height * 0.8,
               constraints: BoxConstraints(
-                maxWidth: 530,
+                maxWidth: 530.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 boxShadow: [
                   BoxShadow(
-                    blurRadius: 12,
+                    blurRadius: 12.0,
                     color: Color(0x1E000000),
                     offset: Offset(
-                      0,
-                      5,
+                      0.0,
+                      5.0,
                     ),
                   )
                 ],
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(12.0),
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(12.0),
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).dark800Persist,
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(12.0),
                   ),
                   child: wrapWithModel(
                     model: _model.postDetailsBaseModel,

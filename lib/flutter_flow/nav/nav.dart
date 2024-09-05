@@ -137,11 +137,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
               : MainProfileWidget(),
         ),
         FFRoute(
-          name: 'createStory',
-          path: '/createStory',
-          builder: (context, params) => CreateStoryWidget(),
-        ),
-        FFRoute(
           name: 'createPost',
           path: '/createPost',
           builder: (context, params) => CreatePostWidget(),
@@ -162,16 +157,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
             userRecord: params.getParam(
               'userRecord',
               ParamType.Document,
-            ),
-          ),
-        ),
-        FFRoute(
-          name: 'storyDetails',
-          path: '/storyDetails',
-          builder: (context, params) => StoryDetailsWidget(
-            initialStoryIndex: params.getParam(
-              'initialStoryIndex',
-              ParamType.int,
             ),
           ),
         ),
@@ -320,6 +305,32 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: 'onboardingInter',
           path: '/onboardingInter',
           builder: (context, params) => OnboardingInterWidget(),
+        ),
+        FFRoute(
+          name: 'myConditionsPage',
+          path: '/myConditionsPage',
+          asyncParams: {
+            'userRef': getDoc(['users'], UsersRecord.fromSnapshot),
+          },
+          builder: (context, params) => MyConditionsPageWidget(
+            userRef: params.getParam(
+              'userRef',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'othersConditionsPage',
+          path: '/othersConditionsPage',
+          asyncParams: {
+            'userRef': getDoc(['users'], UsersRecord.fromSnapshot),
+          },
+          builder: (context, params) => OthersConditionsPageWidget(
+            userRef: params.getParam(
+              'userRef',
+              ParamType.Document,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -508,7 +519,7 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/duuet.png',
+                    'assets/images/01_Splash_Screen.png',
                     fit: BoxFit.cover,
                   ),
                 )

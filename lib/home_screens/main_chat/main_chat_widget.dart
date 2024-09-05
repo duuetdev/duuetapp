@@ -65,17 +65,18 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                 ),
                 actions: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 8, 16, 8),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 16.0, 8.0),
                     child: FlutterFlowIconButton(
                       borderColor: FlutterFlowTheme.of(context).primary,
-                      borderRadius: 12,
-                      borderWidth: 1,
-                      buttonSize: 40,
+                      borderRadius: 12.0,
+                      borderWidth: 1.0,
+                      buttonSize: 40.0,
                       fillColor: FlutterFlowTheme.of(context).accent1,
                       icon: Icon(
                         Icons.add_comment,
                         color: FlutterFlowTheme.of(context).primaryText,
-                        size: 24,
+                        size: 24.0,
                       ),
                       onPressed: () async {
                         context.pushNamed(
@@ -93,7 +94,7 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                   ),
                 ],
                 centerTitle: false,
-                elevation: 0,
+                elevation: 0.0,
               )
             : null,
         body: SafeArea(
@@ -110,10 +111,10 @@ class _MainChatWidgetState extends State<MainChatWidget> {
               ),
               Expanded(
                 child: Align(
-                  alignment: AlignmentDirectional(0, -1),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: Container(
                     constraints: BoxConstraints(
-                      maxWidth: 1070,
+                      maxWidth: 1070.0,
                     ),
                     decoration: BoxDecoration(),
                     child: Column(
@@ -126,24 +127,24 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                           tablet: false,
                         ))
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 12),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 8, 0),
+                                      0.0, 0.0, 8.0, 0.0),
                                   child: Icon(
                                     Icons.alternate_email_rounded,
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 44,
+                                    size: 44.0,
                                   ),
                                 ),
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 12, 0),
+                                        0.0, 0.0, 12.0, 0.0),
                                     child: Text(
                                       'treads.io',
                                       style: FlutterFlowTheme.of(context)
@@ -157,7 +158,7 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 12, 0),
+                                      0.0, 0.0, 12.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       context.pushNamed(
@@ -176,15 +177,15 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                     text: 'New Message',
                                     icon: Icon(
                                       Icons.mode_edit,
-                                      size: 15,
+                                      size: 15.0,
                                     ),
                                     options: FFButtonOptions(
-                                      height: 44,
+                                      height: 44.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 0, 16, 0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0, 0, 0, 0),
+                                              0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -194,12 +195,12 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
-                                      elevation: 2,
+                                      elevation: 2.0,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
-                                        width: 1,
+                                        width: 1.0,
                                       ),
-                                      borderRadius: BorderRadius.circular(12),
+                                      borderRadius: BorderRadius.circular(12.0),
                                     ),
                                   ),
                                 ),
@@ -207,7 +208,8 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                             ),
                           ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Below are your chats and group chats',
                             style: FlutterFlowTheme.of(context)
@@ -234,8 +236,8 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 50,
-                                    height: 50,
+                                    width: 50.0,
+                                    height: 50.0,
                                     child: CircularProgressIndicator(
                                       valueColor: AlwaysStoppedAnimation<Color>(
                                         FlutterFlowTheme.of(context).primary,
@@ -259,7 +261,7 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                       listViewChatsRecordList[listViewIndex];
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 1, 0, 0),
+                                        0.0, 1.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -281,30 +283,30 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                       },
                                       child: Material(
                                         color: Colors.transparent,
-                                        elevation: 0,
+                                        elevation: 0.0,
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
-                                              BorderRadius.circular(0),
+                                              BorderRadius.circular(0.0),
                                         ),
                                         child: Container(
-                                          width: 800,
+                                          width: 800.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             boxShadow: [
                                               BoxShadow(
-                                                blurRadius: 0,
+                                                blurRadius: 0.0,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .alternate,
                                                 offset: Offset(
-                                                  0,
-                                                  1,
+                                                  0.0,
+                                                  1.0,
                                                 ),
                                               )
                                             ],
                                             borderRadius:
-                                                BorderRadius.circular(0),
+                                                BorderRadius.circular(0.0),
                                           ),
                                           child: Builder(
                                             builder: (context) {
@@ -313,7 +315,8 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                   2) {
                                                 return Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(16, 12, 12, 12),
+                                                      .fromSTEB(16.0, 12.0,
+                                                          12.0, 12.0),
                                                   child: FutureBuilder<
                                                       UsersRecord>(
                                                     future: FFAppState()
@@ -337,8 +340,8 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                       if (!snapshot.hasData) {
                                                         return Center(
                                                           child: SizedBox(
-                                                            width: 50,
-                                                            height: 50,
+                                                            width: 50.0,
+                                                            height: 50.0,
                                                             child:
                                                                 CircularProgressIndicator(
                                                               valueColor:
@@ -366,10 +369,10 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                           Align(
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    1, 1),
+                                                                    1.0, 1.0),
                                                             child: Container(
-                                                              width: 44,
-                                                              height: 44,
+                                                              width: 44.0,
+                                                              height: 44.0,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
@@ -378,7 +381,7 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            12),
+                                                                            12.0),
                                                                 shape: BoxShape
                                                                     .rectangle,
                                                                 border:
@@ -386,19 +389,20 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  width: 2,
+                                                                  width: 2.0,
                                                                 ),
                                                               ),
                                                               child: Padding(
                                                                 padding:
                                                                     EdgeInsets
-                                                                        .all(2),
+                                                                        .all(
+                                                                            2.0),
                                                                 child:
                                                                     ClipRRect(
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              8),
+                                                                              8.0),
                                                                   child: Image
                                                                       .network(
                                                                     valueOrDefault<
@@ -407,8 +411,9 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                           .photoUrl,
                                                                       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/teams/GzvajSxrHvi1zwJQsfLk/assets/tjm1k7ywi5dr/@3xlogoMark_outlineOnWhite.png',
                                                                     ),
-                                                                    width: 44,
-                                                                    height: 44,
+                                                                    width: 44.0,
+                                                                    height:
+                                                                        44.0,
                                                                     fit: BoxFit
                                                                         .cover,
                                                                   ),
@@ -421,10 +426,10 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          8,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          8.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -442,10 +447,10 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              12,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              12.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             valueOrDefault<String>(
@@ -467,23 +472,23 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                               currentUserReference))
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              8,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              8.0,
+                                                                              0.0),
                                                                           child:
                                                                               Container(
                                                                             width:
-                                                                                12,
+                                                                                12.0,
                                                                             height:
-                                                                                12,
+                                                                                12.0,
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).accent1,
                                                                               shape: BoxShape.circle,
                                                                               border: Border.all(
                                                                                 color: FlutterFlowTheme.of(context).primary,
-                                                                                width: 2,
+                                                                                width: 2.0,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -493,10 +498,10 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            4,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            4.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       listViewChatsRecord
                                                                           .lastMessage,
@@ -524,10 +529,10 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            4,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            4.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           dateTimeFormat(
@@ -549,11 +554,11 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryText,
                                                                         size:
-                                                                            24,
+                                                                            24.0,
                                                                       ),
                                                                     ].divide(SizedBox(
                                                                         width:
-                                                                            16)),
+                                                                            16.0)),
                                                                   ),
                                                                 ],
                                                               ),
@@ -567,7 +572,8 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                               } else {
                                                 return Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(16, 12, 12, 12),
+                                                      .fromSTEB(16.0, 12.0,
+                                                          12.0, 12.0),
                                                   child: FutureBuilder<
                                                       UsersRecord>(
                                                     future: FFAppState()
@@ -591,8 +597,8 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                       if (!snapshot.hasData) {
                                                         return Center(
                                                           child: SizedBox(
-                                                            width: 50,
-                                                            height: 50,
+                                                            width: 50.0,
+                                                            height: 50.0,
                                                             child:
                                                                 CircularProgressIndicator(
                                                               valueColor:
@@ -621,20 +627,20 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        8),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        8.0),
                                                             child: Container(
-                                                              width: 44,
-                                                              height: 54,
+                                                              width: 44.0,
+                                                              height: 54.0,
                                                               child: Stack(
                                                                 children: [
                                                                   Align(
                                                                     alignment:
                                                                         AlignmentDirectional(
-                                                                            1,
-                                                                            1),
+                                                                            1.0,
+                                                                            1.0),
                                                                     child: FutureBuilder<
                                                                         UsersRecord>(
                                                                       future: UsersRecord.getDocumentOnce(listViewChatsRecord
@@ -653,8 +659,8 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                           return Center(
                                                                             child:
                                                                                 SizedBox(
-                                                                              width: 50,
-                                                                              height: 50,
+                                                                              width: 50.0,
+                                                                              height: 50.0,
                                                                               child: CircularProgressIndicator(
                                                                                 valueColor: AlwaysStoppedAnimation<Color>(
                                                                                   FlutterFlowTheme.of(context).primary,
@@ -669,36 +675,36 @@ class _MainChatWidgetState extends State<MainChatWidget> {
 
                                                                         return Container(
                                                                           width:
-                                                                              32,
+                                                                              32.0,
                                                                           height:
-                                                                              32,
+                                                                              32.0,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).accent1,
                                                                             borderRadius:
-                                                                                BorderRadius.circular(12),
+                                                                                BorderRadius.circular(12.0),
                                                                             shape:
                                                                                 BoxShape.rectangle,
                                                                             border:
                                                                                 Border.all(
                                                                               color: FlutterFlowTheme.of(context).primary,
-                                                                              width: 2,
+                                                                              width: 2.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(2),
+                                                                                EdgeInsets.all(2.0),
                                                                             child:
                                                                                 ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(8),
+                                                                              borderRadius: BorderRadius.circular(8.0),
                                                                               child: CachedNetworkImage(
                                                                                 fadeInDuration: Duration(milliseconds: 300),
                                                                                 fadeOutDuration: Duration(milliseconds: 300),
                                                                                 imageUrl: containerUsersRecord.photoUrl,
-                                                                                width: 44,
-                                                                                height: 44,
+                                                                                width: 44.0,
+                                                                                height: 44.0,
                                                                                 fit: BoxFit.cover,
                                                                               ),
                                                                             ),
@@ -710,19 +716,20 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                   Align(
                                                                     alignment:
                                                                         AlignmentDirectional(
-                                                                            -1,
-                                                                            -1),
+                                                                            -1.0,
+                                                                            -1.0),
                                                                     child:
                                                                         Container(
-                                                                      width: 32,
+                                                                      width:
+                                                                          32.0,
                                                                       height:
-                                                                          32,
+                                                                          32.0,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .accent1,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(12),
+                                                                            BorderRadius.circular(12.0),
                                                                         shape: BoxShape
                                                                             .rectangle,
                                                                         border:
@@ -730,24 +737,24 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           width:
-                                                                              2,
+                                                                              2.0,
                                                                         ),
                                                                       ),
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            EdgeInsets.all(2),
+                                                                            EdgeInsets.all(2.0),
                                                                         child:
                                                                             ClipRRect(
                                                                           borderRadius:
-                                                                              BorderRadius.circular(8),
+                                                                              BorderRadius.circular(8.0),
                                                                           child:
                                                                               Image.network(
                                                                             rowUsersRecord.photoUrl,
                                                                             width:
-                                                                                44,
+                                                                                44.0,
                                                                             height:
-                                                                                44,
+                                                                                44.0,
                                                                             fit:
                                                                                 BoxFit.cover,
                                                                           ),
@@ -764,10 +771,10 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          8,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          8.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -785,10 +792,10 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              12,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              12.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             'Group Chat',
@@ -807,23 +814,23 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                               currentUserReference))
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              8,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              8.0,
+                                                                              0.0),
                                                                           child:
                                                                               Container(
                                                                             width:
-                                                                                12,
+                                                                                12.0,
                                                                             height:
-                                                                                12,
+                                                                                12.0,
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).accent1,
                                                                               shape: BoxShape.circle,
                                                                               border: Border.all(
                                                                                 color: FlutterFlowTheme.of(context).primary,
-                                                                                width: 2,
+                                                                                width: 2.0,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -833,10 +840,10 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            4,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            4.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       listViewChatsRecord
                                                                           .lastMessage,
@@ -864,10 +871,10 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            4,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            4.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           valueOrDefault<
@@ -892,11 +899,11 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryText,
                                                                         size:
-                                                                            24,
+                                                                            24.0,
                                                                       ),
                                                                     ].divide(SizedBox(
                                                                         width:
-                                                                            16)),
+                                                                            16.0)),
                                                                   ),
                                                                 ],
                                                               ),

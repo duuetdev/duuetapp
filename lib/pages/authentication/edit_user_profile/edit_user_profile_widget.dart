@@ -57,8 +57,8 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             body: Center(
               child: SizedBox(
-                width: 50,
-                height: 50,
+                width: 50.0,
+                height: 50.0,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
                     FlutterFlowTheme.of(context).primary,
@@ -85,12 +85,12 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                   automaticallyImplyLeading: false,
                   leading: FlutterFlowIconButton(
                     borderColor: Colors.transparent,
-                    borderRadius: 30,
-                    buttonSize: 46,
+                    borderRadius: 30.0,
+                    buttonSize: 46.0,
                     icon: Icon(
                       Icons.arrow_back_rounded,
                       color: FlutterFlowTheme.of(context).secondaryText,
-                      size: 25,
+                      size: 25.0,
                     ),
                     onPressed: () async {
                       context.pop();
@@ -105,17 +105,17 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                   ),
                   actions: [],
                   centerTitle: false,
-                  elevation: 0,
+                  elevation: 0.0,
                 )
               : null,
           body: SafeArea(
             top: true,
             child: Align(
-              alignment: AlignmentDirectional(0, -1),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Container(
                 width: double.infinity,
                 constraints: BoxConstraints(
-                  maxWidth: 870,
+                  maxWidth: 870.0,
                 ),
                 decoration: BoxDecoration(),
                 child: SingleChildScrollView(
@@ -129,33 +129,34 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                         tablet: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 16.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                               borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(0),
-                                bottomRight: Radius.circular(0),
-                                topLeft: Radius.circular(12),
-                                topRight: Radius.circular(12),
+                                bottomLeft: Radius.circular(0.0),
+                                bottomRight: Radius.circular(0.0),
+                                topLeft: Radius.circular(12.0),
+                                topRight: Radius.circular(12.0),
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(16),
+                              padding: EdgeInsets.all(16.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    buttonSize: 40,
+                                    borderRadius: 30.0,
+                                    buttonSize: 40.0,
                                     icon: Icon(
                                       Icons.arrow_back_rounded,
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
-                                      size: 25,
+                                      size: 25.0,
                                     ),
                                     onPressed: () async {
                                       context.pop();
@@ -163,7 +164,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        12, 0, 0, 0),
+                                        12.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -181,7 +182,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 4, 0, 0),
+                                                  0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             'Fill out your profile now in order to complete setup of your profile.',
                                             style: FlutterFlowTheme.of(context)
@@ -209,8 +210,8 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                             desktop: false,
                           ))
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(16, 4, 16, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 4.0, 16.0, 0.0),
                               child: Text(
                                 'Fill out your profile now in order to complete setup of your profile.',
                                 style: FlutterFlowTheme.of(context)
@@ -222,8 +223,8 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                               ),
                             ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 16, 0, 16),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 16.0, 0.0, 16.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -301,8 +302,8 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                 }
                               },
                               child: Container(
-                                width: 120,
-                                height: 120,
+                                width: 120.0,
+                                height: 120.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).alternate,
                                   image: DecorationImage(
@@ -320,8 +321,8 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(24, 16, 24, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 16.0, 24.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -349,7 +350,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .alternate,
-                                          width: 2,
+                                          width: 2.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -360,7 +361,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          width: 2,
+                                          width: 2.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -371,7 +372,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .error,
-                                          width: 2,
+                                          width: 2.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -382,7 +383,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .error,
-                                          width: 2,
+                                          width: 2.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -391,7 +392,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                       ),
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0, 12, 0, 16),
+                                              0.0, 12.0, 0.0, 16.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
@@ -411,15 +412,15 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 4.0, 24.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 12, 0, 0),
+                                        0.0, 12.0, 0.0, 0.0),
                                     child: TextFormField(
                                       controller:
                                           _model.userNameTextController ??=
@@ -441,7 +442,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .alternate,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -452,7 +453,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -463,7 +464,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -475,7 +476,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -484,7 +485,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                         ),
                                         contentPadding:
                                             EdgeInsetsDirectional.fromSTEB(
-                                                0, 12, 0, 16),
+                                                0.0, 12.0, 0.0, 16.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
@@ -505,15 +506,15 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 4.0, 24.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 12, 0, 0),
+                                        0.0, 12.0, 0.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.bioTextController ??=
                                           TextEditingController(
@@ -541,7 +542,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .alternate,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -552,7 +553,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -563,7 +564,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -575,7 +576,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -584,7 +585,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                         ),
                                         contentPadding:
                                             EdgeInsetsDirectional.fromSTEB(
-                                                0, 8, 0, 0),
+                                                0.0, 8.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -609,7 +610,8 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(24, 80, 24, 40),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 80.0, 24.0, 40.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             await currentUserReference!
@@ -623,10 +625,11 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                           text: 'Save Changes',
                           options: FFButtonOptions(
                             width: double.infinity,
-                            height: 50,
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                            iconPadding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                            height: 50.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
@@ -635,12 +638,12 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),
-                            elevation: 2,
+                            elevation: 2.0,
                             borderSide: BorderSide(
                               color: Colors.transparent,
-                              width: 1,
+                              width: 1.0,
                             ),
-                            borderRadius: BorderRadius.circular(40),
+                            borderRadius: BorderRadius.circular(40.0),
                           ),
                         ),
                       ),

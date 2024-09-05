@@ -61,7 +61,7 @@ class _OnboardingGenderWidgetState extends State<OnboardingGenderWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 24, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 24.0, 0.0),
                   child: Text(
                     '2/6',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -74,17 +74,17 @@ class _OnboardingGenderWidgetState extends State<OnboardingGenderWidget> {
                 ),
               ],
               centerTitle: false,
-              elevation: 0,
+              elevation: 0.0,
             )
           : null,
       body: SafeArea(
         top: true,
         child: Align(
-          alignment: AlignmentDirectional(0, -1),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: double.infinity,
             constraints: BoxConstraints(
-              maxWidth: 870,
+              maxWidth: 870.0,
             ),
             decoration: BoxDecoration(),
             child: SingleChildScrollView(
@@ -102,21 +102,22 @@ class _OnboardingGenderWidgetState extends State<OnboardingGenderWidget> {
                         tablet: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 16.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                               borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(0),
-                                bottomRight: Radius.circular(0),
-                                topLeft: Radius.circular(12),
-                                topRight: Radius.circular(12),
+                                bottomLeft: Radius.circular(0.0),
+                                bottomRight: Radius.circular(0.0),
+                                topLeft: Radius.circular(12.0),
+                                topRight: Radius.circular(12.0),
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(16),
+                              padding: EdgeInsets.all(16.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,7 +133,7 @@ class _OnboardingGenderWidgetState extends State<OnboardingGenderWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 4, 0, 0),
+                                        0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       'Fill out your profile now in order to complete setup of your profile.',
                                       style: FlutterFlowTheme.of(context)
@@ -154,8 +155,8 @@ class _OnboardingGenderWidgetState extends State<OnboardingGenderWidget> {
                         desktop: false,
                       ))
                         Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(16, 0, 16, 10),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 10.0),
                           child: Text(
                             'This field is essential for medical purposes only. Please choose the medically relevant option, and your response will be kept confidential.',
                             style: FlutterFlowTheme.of(context)
@@ -174,8 +175,8 @@ class _OnboardingGenderWidgetState extends State<OnboardingGenderWidget> {
                     options: ['Male', 'Female', 'Prefer not to say'],
                     onChanged: (val) =>
                         safeSetState(() => _model.dropDownValue = val),
-                    width: 300,
-                    height: 56,
+                    width: 300.0,
+                    height: 56.0,
                     textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Figtree',
                           letterSpacing: 0.0,
@@ -184,21 +185,23 @@ class _OnboardingGenderWidgetState extends State<OnboardingGenderWidget> {
                     icon: Icon(
                       Icons.keyboard_arrow_down_rounded,
                       color: FlutterFlowTheme.of(context).secondaryText,
-                      size: 24,
+                      size: 24.0,
                     ),
                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                    elevation: 2,
+                    elevation: 2.0,
                     borderColor: FlutterFlowTheme.of(context).alternate,
-                    borderWidth: 2,
-                    borderRadius: 8,
-                    margin: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 4),
+                    borderWidth: 2.0,
+                    borderRadius: 8.0,
+                    margin:
+                        EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                     hidesUnderline: true,
                     isOverButton: true,
                     isSearchable: false,
                     isMultiSelect: false,
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 40),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         await currentUserReference!
@@ -210,10 +213,12 @@ class _OnboardingGenderWidgetState extends State<OnboardingGenderWidget> {
                       },
                       text: 'Next',
                       options: FFButtonOptions(
-                        width: 230,
-                        height: 50,
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                        iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        width: 230.0,
+                        height: 50.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -221,12 +226,12 @@ class _OnboardingGenderWidgetState extends State<OnboardingGenderWidget> {
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),
-                        elevation: 2,
+                        elevation: 2.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
-                        borderRadius: BorderRadius.circular(40),
+                        borderRadius: BorderRadius.circular(40.0),
                       ),
                     ),
                   ),

@@ -66,8 +66,8 @@ class _StoriesWidgetState extends State<StoriesWidget> {
               if (!snapshot.hasData) {
                 return Center(
                   child: SizedBox(
-                    width: 50,
-                    height: 50,
+                    width: 50.0,
+                    height: 50.0,
                     child: CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(
                         FlutterFlowTheme.of(context).primary,
@@ -110,16 +110,18 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                       pageViewUserStoriesRecord.storyPhoto !=
                                           '')
                                     ClipRRect(
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.0),
                                       child: Image.network(
                                         valueOrDefault<String>(
                                           pageViewUserStoriesRecord.storyPhoto,
                                           'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/be7tvmob7nwb/richard-brutyo-Sg3XwuEpybU-unsplash.jpg',
                                         ),
-                                        width: MediaQuery.sizeOf(context).width,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
                                         height:
                                             MediaQuery.sizeOf(context).height *
-                                                1,
+                                                1.0,
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -128,7 +130,7 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                       pageViewUserStoriesRecord.storyVideo !=
                                           '')
                                     Align(
-                                      alignment: AlignmentDirectional(0, 0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: FlutterFlowVideoPlayer(
                                         path: pageViewUserStoriesRecord
                                             .storyVideo,
@@ -142,7 +144,7 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                       ),
                                     ),
                                   Align(
-                                    alignment: AlignmentDirectional(0, 0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -150,17 +152,17 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                       children: [
                                         Container(
                                           width: double.infinity,
-                                          height: 102,
+                                          height: 102.0,
                                           decoration: BoxDecoration(
                                             gradient: LinearGradient(
                                               colors: [
                                                 Color(0xFF1A1F24),
                                                 Color(0x001A1F24)
                                               ],
-                                              stops: [0, 1],
-                                              begin:
-                                                  AlignmentDirectional(0, -1),
-                                              end: AlignmentDirectional(0, 1),
+                                              stops: [0.0, 1.0],
+                                              begin: AlignmentDirectional(
+                                                  0.0, -1.0),
+                                              end: AlignmentDirectional(0, 1.0),
                                             ),
                                           ),
                                           child: Column(
@@ -168,7 +170,8 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(16, 12, 16, 36),
+                                                    .fromSTEB(
+                                                        16.0, 12.0, 16.0, 36.0),
                                                 child:
                                                     StreamBuilder<UsersRecord>(
                                                   stream: UsersRecord.getDocument(
@@ -179,8 +182,8 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                                     if (!snapshot.hasData) {
                                                       return Center(
                                                         child: SizedBox(
-                                                          width: 50,
-                                                          height: 50,
+                                                          width: 50.0,
+                                                          height: 50.0,
                                                           child:
                                                               CircularProgressIndicator(
                                                             valueColor:
@@ -206,8 +209,8 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                                               .center,
                                                       children: [
                                                         Container(
-                                                          width: 40,
-                                                          height: 40,
+                                                          width: 40.0,
+                                                          height: 40.0,
                                                           clipBehavior:
                                                               Clip.antiAlias,
                                                           decoration:
@@ -242,10 +245,10 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            12,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   valueOrDefault<
                                                                       String>(
@@ -268,10 +271,10 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            12,
-                                                                            4,
-                                                                            0,
-                                                                            0),
+                                                                            12.0,
+                                                                            4.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   userInfoUsersRecord
                                                                       .userName,
@@ -303,20 +306,21 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          60),
+                                                                          60.0),
                                                             ),
                                                             child:
                                                                 FlutterFlowIconButton(
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderRadius: 30,
-                                                              buttonSize: 46,
+                                                              borderRadius:
+                                                                  30.0,
+                                                              buttonSize: 46.0,
                                                               icon: Icon(
                                                                 Icons.more_vert,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
-                                                                size: 25,
+                                                                size: 25.0,
                                                               ),
                                                               onPressed:
                                                                   () async {
@@ -341,7 +345,7 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                                                       child:
                                                                           Container(
                                                                         height:
-                                                                            240,
+                                                                            240.0,
                                                                         child:
                                                                             DeleteStoryWidget(
                                                                           storyDetails:
@@ -366,21 +370,21 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        60),
+                                                                        60.0),
                                                           ),
                                                           child:
                                                               FlutterFlowIconButton(
                                                             borderColor: Colors
                                                                 .transparent,
-                                                            borderRadius: 30,
-                                                            buttonSize: 46,
+                                                            borderRadius: 30.0,
+                                                            buttonSize: 46.0,
                                                             icon: Icon(
                                                               Icons
                                                                   .close_rounded,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .info,
-                                                              size: 25,
+                                                              size: 25.0,
                                                             ),
                                                             onPressed:
                                                                 () async {
@@ -398,17 +402,17 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                         ),
                                         Container(
                                           width: double.infinity,
-                                          height: 100,
+                                          height: 100.0,
                                           decoration: BoxDecoration(
                                             gradient: LinearGradient(
                                               colors: [
                                                 Color(0x001A1F24),
                                                 Color(0xFF1A1F24)
                                               ],
-                                              stops: [0, 1],
-                                              begin:
-                                                  AlignmentDirectional(0, -1),
-                                              end: AlignmentDirectional(0, 1),
+                                              stops: [0.0, 1.0],
+                                              begin: AlignmentDirectional(
+                                                  0.0, -1.0),
+                                              end: AlignmentDirectional(0, 1.0),
                                             ),
                                           ),
                                           child: Column(
@@ -419,7 +423,7 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.all(16),
+                                                padding: EdgeInsets.all(16.0),
                                                 child: Text(
                                                   valueOrDefault<String>(
                                                     pageViewUserStoriesRecord
@@ -446,8 +450,8 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(16, 12, 16, 8),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 12.0, 16.0, 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -482,12 +486,12 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                           Icons.mode_comment_outlined,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          size: 24,
+                                          size: 24.0,
                                         ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  8, 0, 0, 0),
+                                                  8.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             pageViewUserStoriesRecord
                                                 .numComments
@@ -513,7 +517,8 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                     Align(
                       alignment: AlignmentDirectional(0.95, 0.7),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                         child: smooth_page_indicator.SmoothPageIndicator(
                           controller: _model.pageViewController ??=
                               PageController(
@@ -537,11 +542,11 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                             safeSetState(() {});
                           },
                           effect: smooth_page_indicator.ExpandingDotsEffect(
-                            expansionFactor: 2,
-                            spacing: 8,
-                            radius: 16,
-                            dotWidth: 8,
-                            dotHeight: 4,
+                            expansionFactor: 2.0,
+                            spacing: 8.0,
+                            radius: 16.0,
+                            dotWidth: 8.0,
+                            dotHeight: 4.0,
                             dotColor: FlutterFlowTheme.of(context).accent1,
                             activeDotColor:
                                 FlutterFlowTheme.of(context).primary,

@@ -110,8 +110,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                 if (!snapshot.hasData) {
                   return Center(
                     child: SizedBox(
-                      width: 50,
-                      height: 50,
+                      width: 50.0,
+                      height: 50.0,
                       child: CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(
                           FlutterFlowTheme.of(context).primary,
@@ -127,7 +127,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                     icon: Icon(
                       Icons.forum_outlined,
                       color: FlutterFlowTheme.of(context).primary,
-                      size: 90,
+                      size: 90.0,
                     ),
                     title: 'No Messages',
                     body: 'You have not sent any messages in this chat yet.',
@@ -137,9 +137,9 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                 return ListView.builder(
                   padding: EdgeInsets.fromLTRB(
                     0,
-                    12,
+                    12.0,
                     0,
-                    24,
+                    24.0,
                   ),
                   reverse: true,
                   scrollDirection: Axis.vertical,
@@ -175,11 +175,11 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
               color: FlutterFlowTheme.of(context).secondaryBackground,
               boxShadow: [
                 BoxShadow(
-                  blurRadius: 3,
+                  blurRadius: 3.0,
                   color: Color(0x33000000),
                   offset: Offset(
-                    0,
-                    -2,
+                    0.0,
+                    -2.0,
                   ),
                 )
               ],
@@ -194,7 +194,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 0.0, 0.0),
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Row(
@@ -204,22 +205,22 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                 FlutterFlowMediaDisplay(
                                   path: _model.uploadedFileUrl,
                                   imageBuilder: (path) => ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                     child: CachedNetworkImage(
                                       fadeInDuration:
                                           Duration(milliseconds: 500),
                                       fadeOutDuration:
                                           Duration(milliseconds: 500),
                                       imageUrl: path,
-                                      width: 120,
-                                      height: 100,
+                                      width: 120.0,
+                                      height: 100.0,
                                       fit: BoxFit.cover,
                                     ),
                                   ),
                                   videoPlayerBuilder: (path) =>
                                       FlutterFlowVideoPlayer(
                                     path: path,
-                                    width: 300,
+                                    width: 300.0,
                                     autoPlay: false,
                                     looping: true,
                                     showControls: true,
@@ -228,19 +229,19 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1, -1),
+                                  alignment: AlignmentDirectional(-1.0, -1.0),
                                   child: FlutterFlowIconButton(
                                     borderColor:
                                         FlutterFlowTheme.of(context).error,
-                                    borderRadius: 20,
-                                    borderWidth: 2,
-                                    buttonSize: 40,
+                                    borderRadius: 20.0,
+                                    borderWidth: 2.0,
+                                    buttonSize: 40.0,
                                     fillColor: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     icon: Icon(
                                       Icons.delete_outline_rounded,
                                       color: FlutterFlowTheme.of(context).error,
-                                      size: 24,
+                                      size: 24.0,
                                     ),
                                     onPressed: () async {
                                       safeSetState(() {
@@ -254,9 +255,9 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                   ),
                                 ),
                               ]
-                                  .divide(SizedBox(width: 8))
-                                  .addToStart(SizedBox(width: 16))
-                                  .addToEnd(SizedBox(width: 16)),
+                                  .divide(SizedBox(width: 8.0))
+                                  .addToStart(SizedBox(width: 16.0))
+                                  .addToEnd(SizedBox(width: 16.0)),
                             ),
                           ),
                         ),
@@ -267,7 +268,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                   key: _model.formKey,
                   autovalidateMode: AutovalidateMode.disabled,
                   child: Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: EdgeInsets.all(12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -275,15 +276,15 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                       children: [
                         FlutterFlowIconButton(
                           borderColor: FlutterFlowTheme.of(context).alternate,
-                          borderRadius: 60,
-                          borderWidth: 1,
-                          buttonSize: 40,
+                          borderRadius: 60.0,
+                          borderWidth: 1.0,
+                          buttonSize: 40.0,
                           fillColor:
                               FlutterFlowTheme.of(context).secondaryBackground,
                           icon: Icon(
                             Icons.add_rounded,
                             color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 24,
+                            size: 24.0,
                           ),
                           onPressed: () async {
                             final selectedMedia =
@@ -363,8 +364,8 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                           child: Stack(
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 0.0, 0.0),
                                 child: Container(
                                   width: double.infinity,
                                   child: TextFormField(
@@ -466,44 +467,48 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                             fontFamily: 'Figtree',
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            fontSize: 12,
+                                            fontSize: 12.0,
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .alternate,
-                                          width: 1,
+                                          width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(24),
+                                        borderRadius:
+                                            BorderRadius.circular(24.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          width: 1,
+                                          width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(24),
+                                        borderRadius:
+                                            BorderRadius.circular(24.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .error,
-                                          width: 1,
+                                          width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(24),
+                                        borderRadius:
+                                            BorderRadius.circular(24.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .error,
-                                          width: 1,
+                                          width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(24),
+                                        borderRadius:
+                                            BorderRadius.circular(24.0),
                                       ),
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              16, 16, 56, 16),
+                                              16.0, 16.0, 56.0, 16.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -521,23 +526,23 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(1, 0),
+                                alignment: AlignmentDirectional(1.0, 0.0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 4, 6, 4),
+                                      0.0, 4.0, 6.0, 4.0),
                                   child: FlutterFlowIconButton(
                                     borderColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    borderRadius: 20,
-                                    borderWidth: 1,
-                                    buttonSize: 40,
+                                    borderRadius: 20.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 40.0,
                                     fillColor:
                                         FlutterFlowTheme.of(context).accent1,
                                     icon: Icon(
                                       Icons.send_rounded,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 20,
+                                      size: 20.0,
                                     ),
                                     onPressed: () async {
                                       final firestoreBatch =

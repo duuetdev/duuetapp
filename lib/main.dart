@@ -178,7 +178,7 @@ class _NavBarPageState extends State<NavBarPage> {
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.home_outlined,
-                size: 24,
+                size: 24.0,
               ),
               label: 'Home',
               tooltip: '',
@@ -186,21 +186,21 @@ class _NavBarPageState extends State<NavBarPage> {
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.forum_outlined,
-                size: 24,
+                size: 24.0,
               ),
-              label: '__',
+              label: 'Chat',
               tooltip: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.account_circle_outlined,
-                size: 24,
+                size: 24.0,
               ),
               activeIcon: Icon(
                 Icons.account_circle,
-                size: 24,
+                size: 24.0,
               ),
-              label: '__',
+              label: 'Profile',
               tooltip: '',
             )
           ],

@@ -65,7 +65,7 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 24, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 24.0, 0.0),
                   child: Text(
                     '6/6',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -78,17 +78,17 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                 ),
               ],
               centerTitle: false,
-              elevation: 0,
+              elevation: 0.0,
             )
           : null,
       body: SafeArea(
         top: true,
         child: Align(
-          alignment: AlignmentDirectional(0, -1),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: double.infinity,
             constraints: BoxConstraints(
-              maxWidth: 870,
+              maxWidth: 870.0,
             ),
             decoration: BoxDecoration(),
             child: SingleChildScrollView(
@@ -102,7 +102,8 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                     desktop: false,
                   ))
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 10),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 10.0),
                       child: Text(
                         'Everyone’s skin and hair are unique, and by understanding your specific factors like climate, skin type, and hair type we can provide personalized insights and recommendations tailored just for you.',
                         style:
@@ -118,7 +119,8 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                     scrollDirection: Axis.vertical,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(7, 5, 7, 5),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(7.0, 5.0, 7.0, 5.0),
                         child: TextFormField(
                           controller: _model.textController,
                           focusNode: _model.textFieldFocusNode,
@@ -142,30 +144,30 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).alternate,
-                                width: 2,
+                                width: 2.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                             focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).primary,
-                                width: 2,
+                                width: 2.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                             errorBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).error,
-                                width: 2,
+                                width: 2.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                             focusedErrorBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).error,
-                                width: 2,
+                                width: 2.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
                           style:
@@ -179,14 +181,15 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
                         child: FlutterFlowDropDown<String>(
                           multiSelectController:
                               _model.dropDownValueController1 ??=
                                   FormListFieldController<String>(null),
                           options: ['Dry', 'Humid', 'Cold', 'Warm'],
-                          width: 300,
-                          height: 56,
+                          width: 300.0,
+                          height: 56.0,
                           textStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Figtree',
@@ -196,15 +199,16 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                           icon: Icon(
                             Icons.keyboard_arrow_down_rounded,
                             color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 24,
+                            size: 24.0,
                           ),
                           fillColor:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          elevation: 2,
+                          elevation: 2.0,
                           borderColor: FlutterFlowTheme.of(context).alternate,
-                          borderWidth: 2,
-                          borderRadius: 8,
-                          margin: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 4),
+                          borderWidth: 2.0,
+                          borderRadius: 8.0,
+                          margin: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 4.0, 16.0, 4.0),
                           hidesUnderline: true,
                           isOverButton: true,
                           isSearchable: false,
@@ -214,14 +218,15 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
                         child: FlutterFlowDropDown<String>(
                           multiSelectController:
                               _model.dropDownValueController2 ??=
                                   FormListFieldController<String>(null),
                           options: ['Oily', 'Combination', 'Normal', 'Dry'],
-                          width: 300,
-                          height: 56,
+                          width: 300.0,
+                          height: 56.0,
                           textStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Figtree',
@@ -231,15 +236,16 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                           icon: Icon(
                             Icons.keyboard_arrow_down_rounded,
                             color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 24,
+                            size: 24.0,
                           ),
                           fillColor:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          elevation: 2,
+                          elevation: 2.0,
                           borderColor: FlutterFlowTheme.of(context).alternate,
-                          borderWidth: 2,
-                          borderRadius: 8,
-                          margin: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 4),
+                          borderWidth: 2.0,
+                          borderRadius: 8.0,
+                          margin: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 4.0, 16.0, 4.0),
                           hidesUnderline: true,
                           isOverButton: true,
                           isSearchable: false,
@@ -249,7 +255,8 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
                         child: FlutterFlowDropDown<String>(
                           multiSelectController:
                               _model.dropDownValueController3 ??=
@@ -263,8 +270,8 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                             'Flaky',
                             'Oily'
                           ],
-                          width: 300,
-                          height: 56,
+                          width: 300.0,
+                          height: 56.0,
                           textStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Figtree',
@@ -274,15 +281,16 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                           icon: Icon(
                             Icons.keyboard_arrow_down_rounded,
                             color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 24,
+                            size: 24.0,
                           ),
                           fillColor:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          elevation: 2,
+                          elevation: 2.0,
                           borderColor: FlutterFlowTheme.of(context).alternate,
-                          borderWidth: 2,
-                          borderRadius: 8,
-                          margin: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 4),
+                          borderWidth: 2.0,
+                          borderRadius: 8.0,
+                          margin: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 4.0, 16.0, 4.0),
                           hidesUnderline: true,
                           isOverButton: true,
                           isSearchable: false,
@@ -294,7 +302,8 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 40),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         await currentUserReference!.update({
@@ -314,10 +323,12 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                       },
                       text: 'Complete Form',
                       options: FFButtonOptions(
-                        width: 230,
-                        height: 50,
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                        iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        width: 230.0,
+                        height: 50.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -325,12 +336,12 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),
-                        elevation: 2,
+                        elevation: 2.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
-                        borderRadius: BorderRadius.circular(40),
+                        borderRadius: BorderRadius.circular(40.0),
                       ),
                     ),
                   ),

@@ -190,105 +190,105 @@ class ThemeTypography extends Typography {
         'Outfit',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 57,
+        fontSize: 57.0,
       );
   String get displayMediumFamily => 'Outfit';
   TextStyle get displayMedium => GoogleFonts.getFont(
         'Outfit',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 45,
+        fontSize: 45.0,
       );
   String get displaySmallFamily => 'Outfit';
   TextStyle get displaySmall => GoogleFonts.getFont(
         'Outfit',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
-        fontSize: 36,
+        fontSize: 36.0,
       );
   String get headlineLargeFamily => 'Outfit';
   TextStyle get headlineLarge => GoogleFonts.getFont(
         'Outfit',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
-        fontSize: 32,
+        fontSize: 32.0,
       );
   String get headlineMediumFamily => 'Outfit';
   TextStyle get headlineMedium => GoogleFonts.getFont(
         'Outfit',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 24,
+        fontSize: 24.0,
       );
   String get headlineSmallFamily => 'Outfit';
   TextStyle get headlineSmall => GoogleFonts.getFont(
         'Outfit',
         color: theme.primaryText,
         fontWeight: FontWeight.bold,
-        fontSize: 22,
+        fontSize: 22.0,
       );
   String get titleLargeFamily => 'Outfit';
   TextStyle get titleLarge => GoogleFonts.getFont(
         'Outfit',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 22,
+        fontSize: 22.0,
       );
   String get titleMediumFamily => 'Figtree';
   TextStyle get titleMedium => GoogleFonts.getFont(
         'Figtree',
         color: theme.info,
         fontWeight: FontWeight.w500,
-        fontSize: 18,
+        fontSize: 18.0,
       );
   String get titleSmallFamily => 'Figtree';
   TextStyle get titleSmall => GoogleFonts.getFont(
         'Figtree',
         color: theme.info,
         fontWeight: FontWeight.w500,
-        fontSize: 16,
+        fontSize: 16.0,
       );
   String get labelLargeFamily => 'Figtree';
   TextStyle get labelLarge => GoogleFonts.getFont(
         'Figtree',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 16,
+        fontSize: 16.0,
       );
   String get labelMediumFamily => 'Figtree';
   TextStyle get labelMedium => GoogleFonts.getFont(
         'Figtree',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 14,
+        fontSize: 14.0,
       );
   String get labelSmallFamily => 'Figtree';
   TextStyle get labelSmall => GoogleFonts.getFont(
         'Figtree',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 12,
+        fontSize: 12.0,
       );
   String get bodyLargeFamily => 'Figtree';
   TextStyle get bodyLarge => GoogleFonts.getFont(
         'Figtree',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 16,
+        fontSize: 16.0,
       );
   String get bodyMediumFamily => 'Figtree';
   TextStyle get bodyMedium => GoogleFonts.getFont(
         'Figtree',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 14,
+        fontSize: 14.0,
       );
   String get bodySmallFamily => 'Figtree';
   TextStyle get bodySmall => GoogleFonts.getFont(
         'Figtree',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 12,
+        fontSize: 12.0,
       );
 }
 

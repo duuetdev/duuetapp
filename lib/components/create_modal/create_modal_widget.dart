@@ -40,118 +40,52 @@ class _CreateModalWidgetState extends State<CreateModalWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0, 1),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 44),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 44.0),
             child: Container(
               width: double.infinity,
               constraints: BoxConstraints(
-                maxWidth: 570,
+                maxWidth: 570.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 boxShadow: [
                   BoxShadow(
-                    blurRadius: 4,
+                    blurRadius: 4.0,
                     color: Color(0x33000000),
                     offset: Offset(
-                      0,
-                      2,
+                      0.0,
+                      2.0,
                     ),
                   )
                 ],
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(12.0),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 24),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: Container(
-                        width: 60,
-                        height: 4,
+                        width: 60.0,
+                        height: 4.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).alternate,
-                          borderRadius: BorderRadius.circular(4),
+                          borderRadius: BorderRadius.circular(4.0),
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed(
-                            'createStory',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.bottomToTop,
-                                duration: Duration(milliseconds: 200),
-                              ),
-                            },
-                          );
-                        },
-                        child: Container(
-                          width: MediaQuery.sizeOf(context).width * 0.9,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).accent2,
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).secondary,
-                              width: 2,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.all(12),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 4),
-                                  child: Text(
-                                    'Create Story',
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 4),
-                                  child: Text(
-                                    'Share a video of your pup.',
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Figtree',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -173,14 +107,14 @@ class _CreateModalWidgetState extends State<CreateModalWidget> {
                           width: MediaQuery.sizeOf(context).width * 0.9,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).accent1,
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.0),
                             border: Border.all(
                               color: FlutterFlowTheme.of(context).primary,
-                              width: 2,
+                              width: 2.0,
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(12),
+                            padding: EdgeInsets.all(12.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -188,7 +122,7 @@ class _CreateModalWidgetState extends State<CreateModalWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 4),
+                                      0.0, 0.0, 0.0, 4.0),
                                   child: Text(
                                     'Create Post',
                                     style: FlutterFlowTheme.of(context)
@@ -201,7 +135,7 @@ class _CreateModalWidgetState extends State<CreateModalWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 4),
+                                      0.0, 0.0, 0.0, 4.0),
                                   child: Text(
                                     'Share photos on your timeline.',
                                     style: FlutterFlowTheme.of(context)
@@ -218,7 +152,7 @@ class _CreateModalWidgetState extends State<CreateModalWidget> {
                         ),
                       ),
                     ),
-                  ].divide(SizedBox(height: 16)),
+                  ].divide(SizedBox(height: 16.0)),
                 ),
               ),
             ),

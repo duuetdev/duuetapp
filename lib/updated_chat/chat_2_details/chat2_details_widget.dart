@@ -82,13 +82,13 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                 automaticallyImplyLeading: false,
                 leading: FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 60,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 60.0,
                   icon: Icon(
                     Icons.arrow_back_rounded,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 30,
+                    size: 30.0,
                   ),
                   onPressed: () async {
                     context.goNamed(
@@ -113,8 +113,8 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                     if (!snapshot.hasData) {
                       return Center(
                         child: SizedBox(
-                          width: 50,
-                          height: 50,
+                          width: 50.0,
+                          height: 50.0,
                           child: CircularProgressIndicator(
                             valueColor: AlwaysStoppedAnimation<Color>(
                               FlutterFlowTheme.of(context).primary,
@@ -136,34 +136,35 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                       null &&
                                   conditionalBuilderUsersRecord.photoUrl != '')
                                 Align(
-                                  alignment: AlignmentDirectional(-1, -1),
+                                  alignment: AlignmentDirectional(-1.0, -1.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 12, 0),
+                                        0.0, 0.0, 12.0, 0.0),
                                     child: Container(
-                                      width: 44,
-                                      height: 44,
+                                      width: 44.0,
+                                      height: 44.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .accent1,
-                                        borderRadius: BorderRadius.circular(12),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                         shape: BoxShape.rectangle,
                                         border: Border.all(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          width: 2,
+                                          width: 2.0,
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(2),
+                                        padding: EdgeInsets.all(2.0),
                                         child: ClipRRect(
                                           borderRadius:
-                                              BorderRadius.circular(8),
+                                              BorderRadius.circular(8.0),
                                           child: Image.network(
                                             conditionalBuilderUsersRecord
                                                 .photoUrl,
-                                            width: 44,
-                                            height: 44,
+                                            width: 44.0,
+                                            height: 44.0,
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -190,7 +191,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 4, 0, 0),
+                                          0.0, 4.0, 0.0, 0.0),
                                       child: AutoSizeText(
                                         valueOrDefault<String>(
                                           conditionalBuilderUsersRecord.email,
@@ -199,7 +200,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                           maxChars: 40,
                                           replacement: '…',
                                         ),
-                                        minFontSize: 10,
+                                        minFontSize: 10.0,
                                         style: FlutterFlowTheme.of(context)
                                             .labelSmall
                                             .override(
@@ -221,15 +222,16 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 4, 12, 4),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 4.0, 12.0, 4.0),
                                 child: Container(
-                                  width: 54,
-                                  height: 44,
+                                  width: 54.0,
+                                  height: 44.0,
                                   child: Stack(
                                     children: [
                                       Align(
-                                        alignment: AlignmentDirectional(1, 1),
+                                        alignment:
+                                            AlignmentDirectional(1.0, 1.0),
                                         child: FutureBuilder<UsersRecord>(
                                           future: UsersRecord.getDocumentOnce(
                                               widget!.chatRef!.users
@@ -242,8 +244,8 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                             if (!snapshot.hasData) {
                                               return Center(
                                                 child: SizedBox(
-                                                  width: 50,
-                                                  height: 50,
+                                                  width: 50.0,
+                                                  height: 50.0,
                                                   child:
                                                       CircularProgressIndicator(
                                                     valueColor:
@@ -262,27 +264,28 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                                 snapshot.data!;
 
                                             return Container(
-                                              width: 32,
-                                              height: 32,
+                                              width: 32.0,
+                                              height: 32.0,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .accent1,
                                                 borderRadius:
-                                                    BorderRadius.circular(12),
+                                                    BorderRadius.circular(12.0),
                                                 shape: BoxShape.rectangle,
                                                 border: Border.all(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(2),
+                                                padding: EdgeInsets.all(2.0),
                                                 child: ClipRRect(
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                   child: CachedNetworkImage(
                                                     fadeInDuration: Duration(
                                                         milliseconds: 300),
@@ -294,8 +297,8 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                                           .photoUrl,
                                                       'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/teams/GzvajSxrHvi1zwJQsfLk/assets/tjm1k7ywi5dr/@3xlogoMark_outlineOnWhite.png',
                                                     ),
-                                                    width: 44,
-                                                    height: 44,
+                                                    width: 44.0,
+                                                    height: 44.0,
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
@@ -305,36 +308,37 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                         ),
                                       ),
                                       Align(
-                                        alignment: AlignmentDirectional(-1, -1),
+                                        alignment:
+                                            AlignmentDirectional(-1.0, -1.0),
                                         child: Container(
-                                          width: 32,
-                                          height: 32,
+                                          width: 32.0,
+                                          height: 32.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .accent1,
                                             borderRadius:
-                                                BorderRadius.circular(12),
+                                                BorderRadius.circular(12.0),
                                             shape: BoxShape.rectangle,
                                             border: Border.all(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              width: 2,
+                                              width: 2.0,
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(2),
+                                            padding: EdgeInsets.all(2.0),
                                             child: ClipRRect(
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                                  BorderRadius.circular(8.0),
                                               child: Image.network(
                                                 valueOrDefault<String>(
                                                   conditionalBuilderUsersRecord
                                                       .photoUrl,
                                                   'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/teams/GzvajSxrHvi1zwJQsfLk/assets/tjm1k7ywi5dr/@3xlogoMark_outlineOnWhite.png',
                                                 ),
-                                                width: 44,
-                                                height: 44,
+                                                width: 44.0,
+                                                height: 44.0,
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -361,7 +365,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 4, 0, 0),
+                                          0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         '${valueOrDefault<String>(
                                           widget!.chatRef?.users?.length
@@ -391,17 +395,18 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                 ),
                 actions: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 8, 16, 8),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 16.0, 8.0),
                     child: FlutterFlowIconButton(
                       borderColor: FlutterFlowTheme.of(context).alternate,
-                      borderRadius: 12,
-                      borderWidth: 2,
-                      buttonSize: 40,
+                      borderRadius: 12.0,
+                      borderWidth: 2.0,
+                      buttonSize: 40.0,
                       fillColor: FlutterFlowTheme.of(context).primaryBackground,
                       icon: Icon(
                         Icons.more_vert,
                         color: FlutterFlowTheme.of(context).primaryText,
-                        size: 24,
+                        size: 24.0,
                       ),
                       onPressed: () async {
                         await showModalBottomSheet(
@@ -426,7 +431,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                   ),
                 ],
                 centerTitle: false,
-                elevation: 0,
+                elevation: 0.0,
               )
             : null,
         body: SafeArea(

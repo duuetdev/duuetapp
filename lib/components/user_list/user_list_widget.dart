@@ -48,7 +48,7 @@ class _UserListWidgetState extends State<UserListWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
+      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
       child: FutureBuilder<UsersRecord>(
         future: UsersRecord.getDocumentOnce(widget!.userRef!),
         builder: (context, snapshot) {
@@ -56,8 +56,8 @@ class _UserListWidgetState extends State<UserListWidget> {
           if (!snapshot.hasData) {
             return Center(
               child: SizedBox(
-                width: 50,
-                height: 50,
+                width: 50.0,
+                height: 50.0,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
                     FlutterFlowTheme.of(context).primary,
@@ -71,47 +71,57 @@ class _UserListWidgetState extends State<UserListWidget> {
 
           return Container(
             width: double.infinity,
-            height: 60,
+            height: 60.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+              padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Container(
-                    width: 44,
-                    height: 44,
+                    width: 44.0,
+                    height: 44.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).accent1,
-                      borderRadius: BorderRadius.circular(8),
+                      shape: BoxShape.circle,
                       border: Border.all(
                         color: FlutterFlowTheme.of(context).primary,
-                        width: 2,
+                        width: 2.0,
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(2),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(6),
-                        child: CachedNetworkImage(
-                          fadeInDuration: Duration(milliseconds: 300),
-                          fadeOutDuration: Duration(milliseconds: 300),
-                          imageUrl: valueOrDefault<String>(
-                            containerUsersRecord.photoUrl,
-                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/school-social-uni-demo-ttazup/assets/r5iuluq1cerl/favicon%401x.png',
+                      padding: EdgeInsets.all(2.0),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('main_Profile');
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(44.0),
+                          child: CachedNetworkImage(
+                            fadeInDuration: Duration(milliseconds: 500),
+                            fadeOutDuration: Duration(milliseconds: 500),
+                            imageUrl: valueOrDefault<String>(
+                              containerUsersRecord.photoUrl,
+                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/wn636nykq7im/lucrezia-carnelos-0liYTl4dJxk-unsplash.jpg',
+                            ),
+                            width: 40.0,
+                            height: 40.0,
+                            fit: BoxFit.cover,
                           ),
-                          width: 40,
-                          height: 40,
-                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -129,7 +139,8 @@ class _UserListWidgetState extends State<UserListWidget> {
                                     ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               valueOrDefault<String>(
                                 containerUsersRecord.email,

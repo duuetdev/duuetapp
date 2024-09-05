@@ -53,26 +53,28 @@ class _FirstPageWidgetState extends State<FirstPageWidget> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(
                         'assets/images/WhatsApp_logo.png',
                         width: double.infinity,
-                        height: 570,
+                        height: 570.0,
                         fit: BoxFit.contain,
                       ),
                     ),
                     Spacer(),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           context.pushNamed('createAccount');
                         },
                         text: 'Join Now',
                         options: FFButtonOptions(
-                          padding: EdgeInsetsDirectional.fromSTEB(32, 0, 32, 0),
-                          iconPadding:
-                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              32.0, 0.0, 32.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
@@ -80,26 +82,28 @@ class _FirstPageWidgetState extends State<FirstPageWidget> {
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),
-                          elevation: 2,
+                          elevation: 2.0,
                           borderSide: BorderSide(
                             color: Colors.transparent,
-                            width: 1,
+                            width: 1.0,
                           ),
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(24, 24, 24, 12),
+                      padding: EdgeInsetsDirectional.fromSTEB(
+                          24.0, 24.0, 24.0, 12.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           context.pushNamed('login');
                         },
                         text: 'Login',
                         options: FFButtonOptions(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                          iconPadding:
-                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                           textStyle:
@@ -107,12 +111,12 @@ class _FirstPageWidgetState extends State<FirstPageWidget> {
                                     fontFamily: 'Figtree',
                                     letterSpacing: 0.0,
                                   ),
-                          elevation: 0,
+                          elevation: 0.0,
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).alternate,
-                            width: 2,
+                            width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),

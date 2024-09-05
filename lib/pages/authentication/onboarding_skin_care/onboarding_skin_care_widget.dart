@@ -63,7 +63,7 @@ class _OnboardingSkinCareWidgetState extends State<OnboardingSkinCareWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 24, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 24.0, 0.0),
                   child: Text(
                     '4/6',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -76,17 +76,17 @@ class _OnboardingSkinCareWidgetState extends State<OnboardingSkinCareWidget> {
                 ),
               ],
               centerTitle: false,
-              elevation: 0,
+              elevation: 0.0,
             )
           : null,
       body: SafeArea(
         top: true,
         child: Align(
-          alignment: AlignmentDirectional(0, -1),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: double.infinity,
             constraints: BoxConstraints(
-              maxWidth: 870,
+              maxWidth: 870.0,
             ),
             decoration: BoxDecoration(),
             child: SingleChildScrollView(
@@ -100,7 +100,8 @@ class _OnboardingSkinCareWidgetState extends State<OnboardingSkinCareWidget> {
                     desktop: false,
                   ))
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 10),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 10.0),
                       child: Text(
                         'What are the specific skin issues you\'re facing?',
                         style:
@@ -131,8 +132,8 @@ class _OnboardingSkinCareWidgetState extends State<OnboardingSkinCareWidget> {
                           'Aging/Wrinkles',
                           'Crow\'s Feet or Smile Lines'
                         ],
-                        width: 300,
-                        height: 56,
+                        width: 300.0,
+                        height: 56.0,
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
                                   fontFamily: 'Figtree',
@@ -142,15 +143,16 @@ class _OnboardingSkinCareWidgetState extends State<OnboardingSkinCareWidget> {
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
                           color: FlutterFlowTheme.of(context).secondaryText,
-                          size: 24,
+                          size: 24.0,
                         ),
                         fillColor:
                             FlutterFlowTheme.of(context).secondaryBackground,
-                        elevation: 2,
+                        elevation: 2.0,
                         borderColor: FlutterFlowTheme.of(context).alternate,
-                        borderWidth: 2,
-                        borderRadius: 8,
-                        margin: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 4),
+                        borderWidth: 2.0,
+                        borderRadius: 8.0,
+                        margin: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: true,
                         isSearchable: false,
@@ -161,7 +163,8 @@ class _OnboardingSkinCareWidgetState extends State<OnboardingSkinCareWidget> {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 40),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         await currentUserReference!.update({
@@ -179,10 +182,12 @@ class _OnboardingSkinCareWidgetState extends State<OnboardingSkinCareWidget> {
                       },
                       text: 'Next',
                       options: FFButtonOptions(
-                        width: 230,
-                        height: 50,
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                        iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        width: 230.0,
+                        height: 50.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -190,12 +195,12 @@ class _OnboardingSkinCareWidgetState extends State<OnboardingSkinCareWidget> {
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),
-                        elevation: 2,
+                        elevation: 2.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
-                        borderRadius: BorderRadius.circular(40),
+                        borderRadius: BorderRadius.circular(40.0),
                       ),
                     ),
                   ),

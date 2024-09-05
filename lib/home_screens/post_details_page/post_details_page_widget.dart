@@ -61,7 +61,7 @@ class _PostDetailsPageWidgetState extends State<PostDetailsPageWidget> {
           ),
           Expanded(
             child: Align(
-              alignment: AlignmentDirectional(0, -1),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: wrapWithModel(
                 model: _model.postDetailsBaseModel,
                 updateCallback: () => safeSetState(() {}),

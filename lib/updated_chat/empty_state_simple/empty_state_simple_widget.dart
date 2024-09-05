@@ -50,14 +50,14 @@ class _EmptyStateSimpleWidgetState extends State<EmptyStateSimpleWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0, -1),
+      alignment: AlignmentDirectional(0.0, -1.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           widget!.icon!,
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
             child: Text(
               widget!.title,
               textAlign: TextAlign.center,
@@ -69,7 +69,7 @@ class _EmptyStateSimpleWidgetState extends State<EmptyStateSimpleWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16, 8, 16, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 0.0),
             child: Text(
               widget!.body,
               textAlign: TextAlign.center,

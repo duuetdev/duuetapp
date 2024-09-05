@@ -93,20 +93,20 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
           curve: Curves.easeInOut,
           width: double.infinity,
           constraints: BoxConstraints(
-            maxWidth: 600,
+            maxWidth: 600.0,
           ),
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            borderRadius: BorderRadius.circular(0),
+            borderRadius: BorderRadius.circular(0.0),
           ),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12, 12, 0, 8),
+                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 8.0),
                   child: Text(
                     'Options',
                     textAlign: TextAlign.start,
@@ -137,23 +137,24 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 0.0, 0.0),
                               child: Icon(
                                 Icons.group_add_rounded,
                                 color: FlutterFlowTheme.of(context).primaryText,
-                                size: 20,
+                                size: 20.0,
                               ),
                             ),
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Invite Users',
                                   style: FlutterFlowTheme.of(context)
@@ -178,7 +179,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                   }),
                 ),
                 Divider(
-                  thickness: 1,
+                  thickness: 1.0,
                   color: FlutterFlowTheme.of(context).alternate,
                 ),
                 MouseRegion(
@@ -203,23 +204,24 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 0.0, 0.0),
                               child: Icon(
                                 Icons.delete_outline_rounded,
                                 color: FlutterFlowTheme.of(context).error,
-                                size: 20,
+                                size: 20.0,
                               ),
                             ),
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Delete Chat',
                                   style: FlutterFlowTheme.of(context)
@@ -247,7 +249,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                 ),
                 if (_model.showDelete == true)
                   Divider(
-                    thickness: 1,
+                    thickness: 1.0,
                     color: FlutterFlowTheme.of(context).alternate,
                   ),
                 if (_model.showDelete == true)
@@ -264,7 +266,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 8, 12, 8),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -275,7 +278,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        12, 0, 0, 4),
+                                        12.0, 0.0, 0.0, 4.0),
                                     child: Text(
                                       'Confirm Delete',
                                       textAlign: TextAlign.start,
@@ -289,7 +292,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        12, 0, 0, 0),
+                                        12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'You can\'t undo this action.',
                                       style: FlutterFlowTheme.of(context)
@@ -304,8 +307,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Delete',
                                 style: FlutterFlowTheme.of(context)

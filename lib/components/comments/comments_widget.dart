@@ -52,39 +52,39 @@ class _CommentsWidgetState extends State<CommentsWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0, 1),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16, 72, 16, 16),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 72.0, 16.0, 16.0),
             child: Container(
               width: double.infinity,
               constraints: BoxConstraints(
-                maxWidth: 570,
-                maxHeight: 570,
+                maxWidth: 570.0,
+                maxHeight: 570.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 boxShadow: [
                   BoxShadow(
-                    blurRadius: 4,
+                    blurRadius: 4.0,
                     color: Color(0x33000000),
                     offset: Offset(
-                      0,
-                      2,
+                      0.0,
+                      2.0,
                     ),
                   )
                 ],
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(12.0),
                 border: Border.all(
                   color: FlutterFlowTheme.of(context).accent1,
-                  width: 1,
+                  width: 1.0,
                 ),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 44),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 44.0),
                 child: StreamBuilder<UserStoriesRecord>(
                   stream:
                       UserStoriesRecord.getDocument(widget!.story!.reference),
@@ -93,8 +93,8 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                     if (!snapshot.hasData) {
                       return Center(
                         child: SizedBox(
-                          width: 50,
-                          height: 50,
+                          width: 50.0,
+                          height: 50.0,
                           child: CircularProgressIndicator(
                             valueColor: AlwaysStoppedAnimation<Color>(
                               FlutterFlowTheme.of(context).primary,
@@ -111,23 +111,23 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsets.all(12),
+                            padding: EdgeInsets.all(12.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Container(
-                                  width: 60,
-                                  height: 4,
+                                  width: 60.0,
+                                  height: 4.0,
                                   decoration: BoxDecoration(
                                     color:
                                         FlutterFlowTheme.of(context).alternate,
-                                    borderRadius: BorderRadius.circular(4),
+                                    borderRadius: BorderRadius.circular(4.0),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 12, 0, 0),
+                                      0.0, 12.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -146,7 +146,7 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 12, 0, 0),
+                                        0.0, 12.0, 0.0, 0.0),
                                     child: StreamBuilder<
                                         List<StoryCommentsRecord>>(
                                       stream: queryStoryCommentsRecord(
@@ -166,8 +166,8 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                         if (!snapshot.hasData) {
                                           return Center(
                                             child: SizedBox(
-                                              width: 50,
-                                              height: 50,
+                                              width: 50.0,
+                                              height: 50.0,
                                               child: CircularProgressIndicator(
                                                 valueColor:
                                                     AlwaysStoppedAnimation<
@@ -190,7 +190,7 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   0.8,
-                                              height: 300,
+                                              height: 300.0,
                                             ),
                                           );
                                         }
@@ -215,8 +215,8 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 50,
-                                                      height: 50,
+                                                      width: 50.0,
+                                                      height: 50.0,
                                                       child:
                                                           CircularProgressIndicator(
                                                         valueColor:
@@ -235,14 +235,14 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                     snapshot.data!;
 
                                                 return Container(
-                                                  width: 100,
+                                                  width: 100.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8),
+                                                            8.0),
                                                     border: Border.all(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -253,8 +253,8 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                8, 12, 8, 12),
+                                                            .fromSTEB(8.0, 12.0,
+                                                                8.0, 12.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -263,8 +263,8 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                               .start,
                                                       children: [
                                                         Container(
-                                                          width: 44,
-                                                          height: 44,
+                                                          width: 44.0,
+                                                          height: 44.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -273,23 +273,23 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        12),
+                                                                        12.0),
                                                             border: Border.all(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
-                                                              width: 2,
+                                                              width: 2.0,
                                                             ),
                                                           ),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsets.all(
-                                                                    2),
+                                                                    2.0),
                                                             child: ClipRRect(
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8),
+                                                                          8.0),
                                                               child:
                                                                   Image.network(
                                                                 valueOrDefault<
@@ -298,8 +298,8 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                                       .photoUrl,
                                                                   'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/0qewjt016bnb/app_icon-sniff-app-store.png',
                                                                 ),
-                                                                width: 300,
-                                                                height: 200,
+                                                                width: 300.0,
+                                                                height: 200.0,
                                                                 fit: BoxFit
                                                                     .cover,
                                                               ),
@@ -311,10 +311,10 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        12,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        12.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -339,10 +339,10 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          4,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     listViewStoryCommentsRecord
                                                                         .comment,
@@ -360,10 +360,10 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          4,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -371,10 +371,10 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            4,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            4.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           'Posted',
@@ -382,7 +382,7 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                                               .labelSmall
                                                                               .override(
                                                                                 fontFamily: 'Figtree',
-                                                                                fontSize: 12,
+                                                                                fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
@@ -422,23 +422,24 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 16),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              8.0, 8.0, 8.0, 16.0),
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width,
+                            width: MediaQuery.sizeOf(context).width * 1.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               boxShadow: [
                                 BoxShadow(
-                                  blurRadius: 3,
+                                  blurRadius: 3.0,
                                   color: Color(0x3A000000),
                                   offset: Offset(
                                     0.0,
-                                    1,
+                                    1.0,
                                   ),
                                 )
                               ],
-                              borderRadius: BorderRadius.circular(40),
+                              borderRadius: BorderRadius.circular(40.0),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -461,32 +462,36 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                           color: Color(0x00000000),
                                           width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(44),
+                                        borderRadius:
+                                            BorderRadius.circular(44.0),
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(44),
+                                        borderRadius:
+                                            BorderRadius.circular(44.0),
                                       ),
                                       errorBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(44),
+                                        borderRadius:
+                                            BorderRadius.circular(44.0),
                                       ),
                                       focusedErrorBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(44),
+                                        borderRadius:
+                                            BorderRadius.circular(44.0),
                                       ),
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              16, 12, 16, 12),
+                                              16.0, 12.0, 16.0, 12.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -502,7 +507,7 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 4, 0),
+                                      0.0, 0.0, 4.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       if (_model.textController.text != null &&
@@ -535,13 +540,13 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                     },
                                     text: 'Post',
                                     options: FFButtonOptions(
-                                      width: 70,
-                                      height: 40,
+                                      width: 70.0,
+                                      height: 40.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 0),
+                                          0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0, 0, 0, 0),
+                                              0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -552,12 +557,12 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                 .primary,
                                             letterSpacing: 0.0,
                                           ),
-                                      elevation: 0,
+                                      elevation: 0.0,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
-                                        width: 1,
+                                        width: 1.0,
                                       ),
-                                      borderRadius: BorderRadius.circular(12),
+                                      borderRadius: BorderRadius.circular(12.0),
                                     ),
                                   ),
                                 ),

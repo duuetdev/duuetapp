@@ -56,17 +56,17 @@ class _OnboardingInterWidgetState extends State<OnboardingInterWidget> {
               ),
               actions: [],
               centerTitle: false,
-              elevation: 0,
+              elevation: 0.0,
             )
           : null,
       body: SafeArea(
         top: true,
         child: Align(
-          alignment: AlignmentDirectional(0, -1),
+          alignment: AlignmentDirectional(0.0, -1.0),
           child: Container(
             width: double.infinity,
             constraints: BoxConstraints(
-              maxWidth: 870,
+              maxWidth: 870.0,
             ),
             decoration: BoxDecoration(),
             child: SingleChildScrollView(
@@ -80,7 +80,8 @@ class _OnboardingInterWidgetState extends State<OnboardingInterWidget> {
                     desktop: false,
                   ))
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 10),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 10.0),
                       child: Text(
                         '75% of patients report improved health outcomes when participating in online health communities!',
                         style:
@@ -97,7 +98,8 @@ class _OnboardingInterWidgetState extends State<OnboardingInterWidget> {
                     desktop: false,
                   ))
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 10),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 10.0),
                       child: Text(
                         'Don\'t worry, you\'re in good hands :)\n\nUsers of Duuet Care report a 60% improvement in managing their skin and hair concerns within the first three months, thanks to personalized recommendations and support from people with similar experiences.',
                         style:
@@ -108,17 +110,20 @@ class _OnboardingInterWidgetState extends State<OnboardingInterWidget> {
                       ),
                     ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 40),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         context.goNamed('onboardingConcerns');
                       },
                       text: 'Next',
                       options: FFButtonOptions(
-                        width: 230,
-                        height: 50,
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                        iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        width: 230.0,
+                        height: 50.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -126,12 +131,12 @@ class _OnboardingInterWidgetState extends State<OnboardingInterWidget> {
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),
-                        elevation: 2,
+                        elevation: 2.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
-                        borderRadius: BorderRadius.circular(40),
+                        borderRadius: BorderRadius.circular(40.0),
                       ),
                     ),
                   ),

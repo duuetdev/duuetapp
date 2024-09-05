@@ -11,14 +11,10 @@ export '/pages/authentication/forgot_password/forgot_password_widget.dart'
 export '/home_screens/main_feed/main_feed_widget.dart' show MainFeedWidget;
 export '/home_screens/main_profile/main_profile_widget.dart'
     show MainProfileWidget;
-export '/home_screens/create_story/create_story_widget.dart'
-    show CreateStoryWidget;
 export '/home_screens/create_post/create_post_widget.dart'
     show CreatePostWidget;
 export '/home_screens/post_details_page/post_details_page_widget.dart'
     show PostDetailsPageWidget;
-export '/home_screens/story_details/story_details_widget.dart'
-    show StoryDetailsWidget;
 export '/pages/authentication/edit_settings/edit_settings_widget.dart'
     show EditSettingsWidget;
 export '/pages/authentication/edit_user_profile/edit_user_profile_widget.dart'
@@ -56,3 +52,7 @@ export '/pages/authentication/onboarding_general_q/onboarding_general_q_widget.d
     show OnboardingGeneralQWidget;
 export '/pages/authentication/onboarding_inter/onboarding_inter_widget.dart'
     show OnboardingInterWidget;
+export '/my_conditions_page/my_conditions_page_widget.dart'
+    show MyConditionsPageWidget;
+export '/others_conditions_page/others_conditions_page_widget.dart'
+    show OthersConditionsPageWidget;

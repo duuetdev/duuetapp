@@ -53,45 +53,45 @@ class _SideNavWidgetState extends State<SideNavWidget> {
         tablet: false,
       ),
       child: Padding(
-        padding: EdgeInsets.all(12),
+        padding: EdgeInsets.all(12.0),
         child: Container(
-          width: 72,
+          width: 72.0,
           height: double.infinity,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primary,
             boxShadow: [
               BoxShadow(
-                blurRadius: 0,
+                blurRadius: 0.0,
                 color: FlutterFlowTheme.of(context).alternate,
                 offset: Offset(
-                  1,
-                  0,
+                  1.0,
+                  0.0,
                 ),
               )
             ],
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(12.0),
             border: Border.all(
               color: FlutterFlowTheme.of(context).accent4,
-              width: 2,
+              width: 2.0,
             ),
           ),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 // Logo should go here.
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: Icon(
                     Icons.alternate_email_rounded,
                     color: FlutterFlowTheme.of(context).info,
-                    size: 40,
+                    size: 40.0,
                   ),
                 ),
                 Divider(
-                  height: 12,
-                  thickness: 2,
+                  height: 12.0,
+                  thickness: 2.0,
                   color: FlutterFlowTheme.of(context).accent1,
                 ),
                 MouseRegion(
@@ -117,8 +117,8 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 250),
                       curve: Curves.easeInOut,
-                      width: 44,
-                      height: 44,
+                      width: 44.0,
+                      height: 44.0,
                       decoration: BoxDecoration(
                         color: () {
                           if (widget!.selectedNav == 1) {
@@ -129,7 +129,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                             return FlutterFlowTheme.of(context).primary;
                           }
                         }(),
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(12.0),
                         border: Border.all(
                           color: valueOrDefault<Color>(
                             () {
@@ -146,13 +146,13 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(8),
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(
                           Icons.house_outlined,
                           color: widget!.selectedNav == 1
                               ? FlutterFlowTheme.of(context).info
                               : FlutterFlowTheme.of(context).accent4,
-                          size: 24,
+                          size: 24.0,
                         ),
                       ),
                     ),
@@ -187,8 +187,8 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 250),
                       curve: Curves.easeInOut,
-                      width: 44,
-                      height: 44,
+                      width: 44.0,
+                      height: 44.0,
                       decoration: BoxDecoration(
                         color: () {
                           if (widget!.selectedNav == 2) {
@@ -199,7 +199,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                             return FlutterFlowTheme.of(context).primary;
                           }
                         }(),
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(12.0),
                         border: Border.all(
                           color: () {
                             if (widget!.selectedNav == 2) {
@@ -213,13 +213,13 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(8),
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(
                           Icons.forum_rounded,
                           color: widget!.selectedNav == 2
                               ? FlutterFlowTheme.of(context).info
                               : FlutterFlowTheme.of(context).accent4,
-                          size: 24,
+                          size: 24.0,
                         ),
                       ),
                     ),
@@ -254,8 +254,8 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 250),
                       curve: Curves.easeInOut,
-                      width: 44,
-                      height: 44,
+                      width: 44.0,
+                      height: 44.0,
                       decoration: BoxDecoration(
                         color: () {
                           if (widget!.selectedNav == 3) {
@@ -266,7 +266,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                             return FlutterFlowTheme.of(context).primary;
                           }
                         }(),
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(12.0),
                         border: Border.all(
                           color: valueOrDefault<Color>(
                             () {
@@ -283,13 +283,13 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(8),
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(
                           Icons.account_circle_outlined,
                           color: widget!.selectedNav == 3
                               ? FlutterFlowTheme.of(context).info
                               : FlutterFlowTheme.of(context).accent4,
-                          size: 24,
+                          size: 24.0,
                         ),
                       ),
                     ),
@@ -301,7 +301,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                     safeSetState(() => _model.mouseRegionHovered3 = false);
                   }),
                 ),
-              ].divide(SizedBox(height: 16)),
+              ].divide(SizedBox(height: 16.0)),
             ),
           ),
         ),

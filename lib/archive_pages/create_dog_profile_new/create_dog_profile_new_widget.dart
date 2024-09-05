@@ -73,13 +73,13 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
               actions: [
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 60,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 60.0,
                   icon: Icon(
                     Icons.close_rounded,
                     color: FlutterFlowTheme.of(context).secondaryText,
-                    size: 30,
+                    size: 30.0,
                   ),
                   onPressed: () async {
                     context.pop();
@@ -87,7 +87,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                 ),
               ],
               centerTitle: false,
-              elevation: 0,
+              elevation: 0.0,
             )
           : null,
       body: SafeArea(
@@ -100,7 +100,8 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 16),
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -119,7 +120,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                 ),
                 Container(
                   width: MediaQuery.sizeOf(context).width * 0.9,
-                  height: 200,
+                  height: 200.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     image: DecorationImage(
@@ -128,7 +129,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                         'assets/images/dog_emptyChoosePhoto@2x.png',
                       ).image,
                     ),
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: InkWell(
                     splashColor: Colors.transparent,
@@ -194,24 +195,26 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                       }
                     },
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.0),
                       child: Image.network(
                         _model.uploadedFileUrl,
                         width: MediaQuery.sizeOf(context).width * 0.9,
-                        height: 200,
+                        height: 200.0,
                         fit: BoxFit.cover,
                       ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24, 16, 24, 0),
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 0.0, 0.0),
                           child: TextFormField(
                             controller: _model.dogNameTextController,
                             focusNode: _model.dogNameFocusNode,
@@ -230,7 +233,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(4.0),
@@ -240,7 +243,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(4.0),
@@ -250,7 +253,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               errorBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(4.0),
@@ -260,15 +263,15 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               focusedErrorBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(4.0),
                                   topRight: Radius.circular(4.0),
                                 ),
                               ),
-                              contentPadding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 24, 0, 24),
+                              contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 24.0, 0.0, 24.0),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
@@ -285,13 +288,14 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 24.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 0.0, 0.0),
                           child: TextFormField(
                             controller: _model.dogBreedTextController,
                             focusNode: _model.dogBreedFocusNode,
@@ -309,7 +313,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(4.0),
@@ -319,7 +323,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(4.0),
@@ -329,7 +333,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               errorBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(4.0),
@@ -339,15 +343,15 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               focusedErrorBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(4.0),
                                   topRight: Radius.circular(4.0),
                                 ),
                               ),
-                              contentPadding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 16, 0, 16),
+                              contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 16.0, 0.0, 16.0),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
@@ -364,13 +368,14 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 24.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 0.0, 0.0),
                           child: TextFormField(
                             controller: _model.dogAgeTextController,
                             focusNode: _model.dogAgeFocusNode,
@@ -388,7 +393,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(4.0),
@@ -398,7 +403,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(4.0),
@@ -408,7 +413,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               errorBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(4.0),
@@ -418,7 +423,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               focusedErrorBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                                 borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(4.0),
@@ -443,7 +448,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
               ],
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 32, 0, 40),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 40.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   await DogsRecord.collection.doc().set(createDogsRecordData(
@@ -457,22 +462,23 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                 },
                 text: 'Add Pup',
                 options: FFButtonOptions(
-                  width: 180,
-                  height: 50,
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                  width: 180.0,
+                  height: 50.0,
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  iconPadding:
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Figtree',
                         color: Colors.white,
                         letterSpacing: 0.0,
                       ),
-                  elevation: 2,
+                  elevation: 2.0,
                   borderSide: BorderSide(
                     color: Colors.transparent,
-                    width: 1,
+                    width: 1.0,
                   ),
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(40.0),
                 ),
               ),
             ),

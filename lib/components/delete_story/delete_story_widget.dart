@@ -47,45 +47,46 @@ class _DeleteStoryWidgetState extends State<DeleteStoryWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0, 1),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Padding(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.all(16.0),
             child: Container(
               width: double.infinity,
               constraints: BoxConstraints(
-                maxWidth: 570,
+                maxWidth: 570.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 boxShadow: [
                   BoxShadow(
-                    blurRadius: 4,
+                    blurRadius: 4.0,
                     color: Color(0x33000000),
                     offset: Offset(
-                      0,
-                      2,
+                      0.0,
+                      2.0,
                     ),
                   )
                 ],
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(12.0),
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 24),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 24.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: Container(
-                        width: 60,
-                        height: 4,
+                        width: 60.0,
+                        height: 4.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).alternate,
-                          borderRadius: BorderRadius.circular(4),
+                          borderRadius: BorderRadius.circular(4.0),
                         ),
                       ),
                     ),
@@ -107,9 +108,11 @@ class _DeleteStoryWidgetState extends State<DeleteStoryWidget> {
                       text: 'Delete Story',
                       options: FFButtonOptions(
                         width: double.infinity,
-                        height: 60,
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                        iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        height: 60.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: Color(0xFFFF5963),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -117,16 +120,17 @@ class _DeleteStoryWidgetState extends State<DeleteStoryWidget> {
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),
-                        elevation: 2,
+                        elevation: 2.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(12.0),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           context.pop();
@@ -134,10 +138,11 @@ class _DeleteStoryWidgetState extends State<DeleteStoryWidget> {
                         text: 'Cancel',
                         options: FFButtonOptions(
                           width: double.infinity,
-                          height: 60,
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                          iconPadding:
-                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                          height: 60.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                           textStyle:
@@ -145,12 +150,12 @@ class _DeleteStoryWidgetState extends State<DeleteStoryWidget> {
                                     fontFamily: 'Figtree',
                                     letterSpacing: 0.0,
                                   ),
-                          elevation: 0,
+                          elevation: 0.0,
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).alternate,
-                            width: 2,
+                            width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
                       ),
                     ),

@@ -60,29 +60,29 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
               : FlutterFlowTheme.of(context).secondaryBackground,
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+          padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
               Container(
-                width: 40,
-                height: 40,
+                width: 40.0,
+                height: 40.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).accent1,
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12.0),
                   border: Border.all(
                     color: FlutterFlowTheme.of(context).primary,
-                    width: 2,
+                    width: 2.0,
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(2),
+                  padding: EdgeInsets.all(2.0),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(8.0),
                     child: Image.network(
                       widget!.userRef!.photoUrl,
-                      width: 32,
-                      height: 32,
+                      width: 32.0,
+                      height: 32.0,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -90,7 +90,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12, 0, 8, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 8.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -108,7 +108,8 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                             ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                         child: Text(
                           valueOrDefault<String>(
                             widget!.userRef?.role,
@@ -128,19 +129,20 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
               ),
               if (currentUserReference == widget!.userRef?.reference)
                 Container(
-                  height: 32,
+                  height: 32.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).accent1,
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(12.0),
                     border: Border.all(
                       color: FlutterFlowTheme.of(context).primary,
-                      width: 2,
+                      width: 2.0,
                     ),
                   ),
                   child: Align(
-                    alignment: AlignmentDirectional(0, 0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                       child: Text(
                         'ME',
                         textAlign: TextAlign.center,

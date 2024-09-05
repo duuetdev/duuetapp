@@ -61,29 +61,29 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
             color: FlutterFlowTheme.of(context).secondaryBackground,
             boxShadow: [
               BoxShadow(
-                blurRadius: 4,
+                blurRadius: 4.0,
                 color: Color(0x33000000),
                 offset: Offset(
-                  0,
-                  2,
+                  0.0,
+                  2.0,
                 ),
               )
             ],
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(0),
-              bottomRight: Radius.circular(0),
-              topLeft: Radius.circular(12),
-              topRight: Radius.circular(12),
+              bottomLeft: Radius.circular(0.0),
+              bottomRight: Radius.circular(0.0),
+              topLeft: Radius.circular(12.0),
+              topRight: Radius.circular(12.0),
             ),
           ),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12, 4, 0, 4),
+                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 0.0, 4.0),
                   child: RichText(
                     textScaler: MediaQuery.of(context).textScaler,
                     text: TextSpan(
@@ -111,7 +111,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                   child: Text(
                     'In this chat',
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
@@ -121,7 +121,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: Builder(
                     builder: (context) {
                       final chatUsers = widget!.chatRef?.users?.toList() ?? [];
@@ -140,8 +140,8 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 50,
-                                    height: 50,
+                                    width: 50.0,
+                                    height: 50.0,
                                     child: CircularProgressIndicator(
                                       valueColor: AlwaysStoppedAnimation<Color>(
                                         FlutterFlowTheme.of(context).primary,
@@ -176,7 +176,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                   ),
                 ),
                 Divider(
-                  thickness: 1,
+                  thickness: 1.0,
                   color: FlutterFlowTheme.of(context).alternate,
                 ),
                 Row(
@@ -250,11 +250,12 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                   ],
                 ),
                 Divider(
-                  thickness: 1,
+                  thickness: 1.0,
                   color: FlutterFlowTheme.of(context).alternate,
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 44),
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 44.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       Navigator.pop(context);
@@ -262,29 +263,31 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                     text: 'Close',
                     options: FFButtonOptions(
                       width: double.infinity,
-                      height: 52,
-                      padding: EdgeInsetsDirectional.fromSTEB(44, 0, 44, 0),
-                      iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                      height: 52.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(44.0, 0.0, 44.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       textStyle:
                           FlutterFlowTheme.of(context).titleLarge.override(
                                 fontFamily: 'Outfit',
-                                fontSize: 18,
+                                fontSize: 18.0,
                                 letterSpacing: 0.0,
                               ),
-                      elevation: 0,
+                      elevation: 0.0,
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).alternate,
-                        width: 2,
+                        width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(12.0),
                       hoverColor: FlutterFlowTheme.of(context).alternate,
                       hoverBorderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).alternate,
-                        width: 2,
+                        width: 2.0,
                       ),
                       hoverTextColor: FlutterFlowTheme.of(context).primaryText,
-                      hoverElevation: 3,
+                      hoverElevation: 3.0,
                     ),
                   ),
                 ),

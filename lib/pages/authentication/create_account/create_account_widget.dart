@@ -268,17 +268,17 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(24, 64, 24, 0),
+              padding: EdgeInsetsDirectional.fromSTEB(24.0, 64.0, 24.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
                       'assets/images/treads_logo@3x.png',
-                      width: 140,
-                      height: 140,
+                      width: 140.0,
+                      height: 140.0,
                       fit: BoxFit.cover,
                     ),
                   ).animateOnPageLoad(
@@ -288,33 +288,34 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
             ),
             Container(
               width: double.infinity,
-              height: 500,
+              height: 500.0,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
                     Color(0x001A1F24),
                     FlutterFlowTheme.of(context).secondaryBackground
                   ],
-                  stops: [0, 0.3],
-                  begin: AlignmentDirectional(0, -1),
-                  end: AlignmentDirectional(0, 1),
+                  stops: [0.0, 0.3],
+                  begin: AlignmentDirectional(0.0, -1.0),
+                  end: AlignmentDirectional(0, 1.0),
                 ),
               ),
-              alignment: AlignmentDirectional(0, 0.8),
+              alignment: AlignmentDirectional(0.0, 0.8),
               child: Container(
                 width: double.infinity,
                 constraints: BoxConstraints(
-                  maxWidth: 570,
+                  maxWidth: 570.0,
                 ),
                 decoration: BoxDecoration(),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 44),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 44.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(24, 44, 24, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 44.0, 24.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -337,8 +338,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(24, 0, 24, 12),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 24.0, 12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -367,12 +368,12 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                                   },
                                   text: 'Login',
                                   options: FFButtonOptions(
-                                    width: 70,
-                                    height: 28,
+                                    width: 70.0,
+                                    height: 28.0,
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 0),
+                                        0.0, 0.0, 0.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 0),
+                                        0.0, 0.0, 0.0, 0.0),
                                     color: Color(0x00FFFFFF),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
@@ -380,15 +381,15 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                                           fontFamily: 'Figtree',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          fontSize: 14,
+                                          fontSize: 14.0,
                                           letterSpacing: 0.0,
                                         ),
-                                    elevation: 0,
+                                    elevation: 0.0,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                               ],
@@ -398,7 +399,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 0.0, 24.0, 0.0),
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
@@ -406,15 +408,15 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                                 .secondaryBackground,
                             boxShadow: [
                               BoxShadow(
-                                blurRadius: 3,
+                                blurRadius: 3.0,
                                 color: Color(0x33000000),
                                 offset: Offset(
-                                  0,
-                                  1,
+                                  0.0,
+                                  1.0,
                                 ),
                               )
                             ],
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: TextFormField(
                             controller: _model.emailTextController,
@@ -431,33 +433,33 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  20, 24, 20, 24),
+                                  20.0, 24.0, 20.0, 24.0),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -473,7 +475,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                             animationsMap['containerOnPageLoadAnimation3']!),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(24, 16, 24, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 16.0, 24.0, 0.0),
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
@@ -481,15 +484,15 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                                 .secondaryBackground,
                             boxShadow: [
                               BoxShadow(
-                                blurRadius: 3,
+                                blurRadius: 3.0,
                                 color: Color(0x33000000),
                                 offset: Offset(
-                                  0,
-                                  1,
+                                  0.0,
+                                  1.0,
                                 ),
                               )
                             ],
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: TextFormField(
                             controller: _model.passwordTextController,
@@ -506,33 +509,33 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  20, 24, 20, 24),
+                                  20.0, 24.0, 20.0, 24.0),
                               suffixIcon: InkWell(
                                 onTap: () => safeSetState(
                                   () => _model.passwordVisibility =
@@ -545,7 +548,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                                       : Icons.visibility_off_outlined,
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
-                                  size: 22,
+                                  size: 22.0,
                                 ),
                               ),
                             ),
@@ -563,7 +566,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                             animationsMap['containerOnPageLoadAnimation4']!),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(24, 16, 24, 12),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 16.0, 24.0, 12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -587,11 +591,11 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                               },
                               text: 'Create Account',
                               options: FFButtonOptions(
-                                height: 48,
+                                height: 48.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    32, 0, 32, 0),
-                                iconPadding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                    32.0, 0.0, 32.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
@@ -600,12 +604,12 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
-                                elevation: 2,
+                                elevation: 2.0,
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
-                                  width: 1,
+                                  width: 1.0,
                                 ),
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
                             ),
                           ],
@@ -613,9 +617,10 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                             animationsMap['rowOnPageLoadAnimation3']!),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0, -1),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(2, 24, 0, 12),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              2.0, 24.0, 0.0, 12.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               GoRouter.of(context).prepareAuthEvent();
@@ -629,12 +634,12 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                             },
                             text: 'Continue as guest',
                             options: FFButtonOptions(
-                              width: 200,
-                              height: 40,
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                              iconPadding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                              width: 200.0,
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                               textStyle: FlutterFlowTheme.of(context)
@@ -643,12 +648,12 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget>
                                     fontFamily: 'Figtree',
                                     letterSpacing: 0.0,
                                   ),
-                              elevation: 0,
+                              elevation: 0.0,
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).alternate,
-                                width: 2,
+                                width: 2.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                           ).animateOnPageLoad(
                               animationsMap['buttonOnPageLoadAnimation']!),

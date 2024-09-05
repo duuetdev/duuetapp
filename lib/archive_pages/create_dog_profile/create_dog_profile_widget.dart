@@ -70,7 +70,7 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 24, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 24.0, 0.0),
                   child: Text(
                     '1/2',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -83,7 +83,7 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                 ),
               ],
               centerTitle: false,
-              elevation: 0,
+              elevation: 0.0,
             )
           : null,
       body: SafeArea(
@@ -97,7 +97,8 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 16),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -117,7 +118,7 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                   ),
                   Container(
                     width: MediaQuery.sizeOf(context).width * 0.9,
-                    height: 200,
+                    height: 200.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).alternate,
                       image: DecorationImage(
@@ -126,7 +127,7 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                           'assets/images/dog_emptyChoosePhoto@2x.png',
                         ).image,
                       ),
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: InkWell(
                       splashColor: Colors.transparent,
@@ -192,25 +193,26 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                         }
                       },
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(16.0),
                         child: Image.network(
                           _model.uploadedFileUrl,
                           width: MediaQuery.sizeOf(context).width * 0.9,
-                          height: 200,
+                          height: 200.0,
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(24, 16, 24, 0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
                           child: Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 0.0),
                             child: TextFormField(
                               controller: _model.dogNameTextController,
                               focusNode: _model.dogNameFocusNode,
@@ -282,14 +284,15 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 24.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
                           child: Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 0.0),
                             child: TextFormField(
                               controller: _model.dogBreedTextController,
                               focusNode: _model.dogBreedFocusNode,
@@ -360,14 +363,15 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 24.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
                           child: Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 12.0, 0.0, 0.0),
                             child: TextFormField(
                               controller: _model.dogAgeTextController,
                               focusNode: _model.dogAgeFocusNode,
@@ -441,12 +445,13 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                 ],
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 60, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -468,19 +473,20 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 40),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 20.0, 40.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.goNamed('createYourProfile');
                             },
                             text: 'Skip',
                             options: FFButtonOptions(
-                              width: 100,
-                              height: 50,
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                              iconPadding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                              width: 100.0,
+                              height: 50.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color: Color(0xCCFFFFFF),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
@@ -489,17 +495,18 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                                     color: Color(0xFF1A1F24),
                                     letterSpacing: 0.0,
                                   ),
-                              elevation: 0,
+                              elevation: 0.0,
                               borderSide: BorderSide(
                                 color: Colors.transparent,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(40),
+                              borderRadius: BorderRadius.circular(40.0),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 40),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 40.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               await DogsRecord.collection
@@ -516,12 +523,12 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                             },
                             text: 'Save & Continue',
                             options: FFButtonOptions(
-                              width: 180,
-                              height: 50,
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                              iconPadding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                              width: 180.0,
+                              height: 50.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
@@ -530,12 +537,12 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),
-                              elevation: 2,
+                              elevation: 2.0,
                               borderSide: BorderSide(
                                 color: Colors.transparent,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(40),
+                              borderRadius: BorderRadius.circular(40.0),
                             ),
                           ),
                         ),

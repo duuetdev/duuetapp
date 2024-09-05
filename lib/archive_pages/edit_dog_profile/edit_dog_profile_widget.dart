@@ -68,8 +68,8 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             body: Center(
               child: SizedBox(
-                width: 50,
-                height: 50,
+                width: 50.0,
+                height: 50.0,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(
                     FlutterFlowTheme.of(context).primary,
@@ -96,12 +96,12 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                   automaticallyImplyLeading: false,
                   leading: FlutterFlowIconButton(
                     borderColor: Colors.transparent,
-                    borderRadius: 30,
-                    buttonSize: 46,
+                    borderRadius: 30.0,
+                    buttonSize: 46.0,
                     icon: Icon(
                       Icons.arrow_back_rounded,
                       color: FlutterFlowTheme.of(context).secondaryText,
-                      size: 25,
+                      size: 25.0,
                     ),
                     onPressed: () async {
                       context.pop();
@@ -116,7 +116,7 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                   ),
                   actions: [],
                   centerTitle: false,
-                  elevation: 0,
+                  elevation: 0.0,
                 )
               : null,
           body: SafeArea(
@@ -130,7 +130,8 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 16),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -150,7 +151,7 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                       ),
                       Container(
                         width: MediaQuery.sizeOf(context).width * 0.9,
-                        height: 200,
+                        height: 200.0,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
@@ -161,7 +162,7 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                               ),
                             ).image,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -233,18 +234,19 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                             }
                           },
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(16.0),
                             child: Image.network(
                               _model.uploadedFileUrl,
                               width: MediaQuery.sizeOf(context).width * 0.9,
-                              height: 200,
+                              height: 200.0,
                               fit: BoxFit.cover,
                             ),
                           ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 16.0, 16.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -317,14 +319,15 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 4.0, 16.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 12.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.dogBreedTextController,
                                   focusNode: _model.dogBreedFocusNode,
@@ -394,14 +397,15 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 4.0, 16.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 12.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.dogAgeTextController,
                                   focusNode: _model.dogAgeFocusNode,
@@ -473,12 +477,14 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 60, 0, 0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 16.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -500,8 +506,8 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 40),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 40.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   await widget!.dogProfile!.reference
@@ -515,12 +521,12 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                                 },
                                 text: 'Save Changes',
                                 options: FFButtonOptions(
-                                  width: 200,
-                                  height: 50,
+                                  width: 200.0,
+                                  height: 50.0,
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
+                                      0.0, 0.0, 0.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
+                                      0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
@@ -529,12 +535,12 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                                         color: Colors.white,
                                         letterSpacing: 0.0,
                                       ),
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(40),
+                                  borderRadius: BorderRadius.circular(40.0),
                                 ),
                               ),
                             ),

@@ -19,6 +19,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 import 'main_feed_model.dart';
 export 'main_feed_model.dart';
 
@@ -48,6 +49,19 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
     _model = createModel(context, () => MainFeedModel());
 
     animationsMap.addAll({
+      'columnOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 1.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
       'iconOnActionTriggerAnimation': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: false,
@@ -88,25 +102,14 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
         visible: MediaQuery.sizeOf(context).width <= 990.0,
         child: FloatingActionButton(
           onPressed: () async {
-            await showModalBottomSheet(
-              isScrollControlled: true,
-              backgroundColor: Color(0x00000000),
-              barrierColor: FlutterFlowTheme.of(context).accent4,
-              context: context,
-              builder: (context) {
-                return Padding(
-                  padding: MediaQuery.viewInsetsOf(context),
-                  child: CreateModalWidget(),
-                );
-              },
-            ).then((value) => safeSetState(() {}));
+            context.pushNamed('createPost');
           },
           backgroundColor: FlutterFlowTheme.of(context).primary,
-          elevation: 8,
+          elevation: 8.0,
           child: Icon(
             Icons.create_rounded,
             color: Colors.white,
-            size: 24,
+            size: 24.0,
           ),
         ),
       ),
@@ -119,19 +122,21 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
               backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
               automaticallyImplyLeading: false,
               title: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               'Welcome back 👋🏻',
                               style: FlutterFlowTheme.of(context)
@@ -162,18 +167,18 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                       ),
                     ),
                     Container(
-                      width: 44,
-                      height: 44,
+                      width: 44.0,
+                      height: 44.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).accent1,
                         shape: BoxShape.circle,
                         border: Border.all(
                           color: FlutterFlowTheme.of(context).primary,
-                          width: 2,
+                          width: 2.0,
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(2),
+                        padding: EdgeInsets.all(2.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => InkWell(
                             splashColor: Colors.transparent,
@@ -184,13 +189,13 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                               context.pushNamed('main_Profile');
                             },
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(44),
+                              borderRadius: BorderRadius.circular(44.0),
                               child: CachedNetworkImage(
                                 fadeInDuration: Duration(milliseconds: 500),
                                 fadeOutDuration: Duration(milliseconds: 500),
                                 imageUrl: currentUserPhoto,
-                                width: 40,
-                                height: 40,
+                                width: 40.0,
+                                height: 40.0,
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -204,7 +209,7 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
               actions: [],
               centerTitle: false,
               toolbarHeight: MediaQuery.sizeOf(context).height * 0.1,
-              elevation: 0,
+              elevation: 0.0,
             )
           : null,
       body: Row(
@@ -219,11 +224,11 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
           ),
           Expanded(
             child: Align(
-              alignment: AlignmentDirectional(0, -1),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Container(
                 width: double.infinity,
                 constraints: BoxConstraints(
-                  maxWidth: 1070,
+                  maxWidth: 1070.0,
                 ),
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -238,23 +243,24 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                         tablet: false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 12),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 0.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 8, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 8.0, 0.0),
                                 child: Icon(
                                   Icons.alternate_email_rounded,
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 44,
+                                  size: 44.0,
                                 ),
                               ),
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 12, 0),
+                                      0.0, 0.0, 12.0, 0.0),
                                   child: Text(
                                     'treads.io',
                                     style: FlutterFlowTheme.of(context)
@@ -267,8 +273,8 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 12, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 12.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     await showModalBottomSheet(
@@ -289,14 +295,14 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                                   text: 'New Post',
                                   icon: Icon(
                                     Icons.mode_edit,
-                                    size: 15,
+                                    size: 15.0,
                                   ),
                                   options: FFButtonOptions(
-                                    height: 44,
+                                    height: 44.0,
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 0, 16, 0),
+                                        16.0, 0.0, 16.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 0),
+                                        0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
@@ -305,12 +311,12 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),
-                                    elevation: 2,
+                                    elevation: 2.0,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(12),
+                                    borderRadius: BorderRadius.circular(12.0),
                                   ),
                                   showLoadingIndicator: false,
                                 ),
@@ -319,7 +325,8 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                           ),
                         ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 32),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 32.0),
                         child: StreamBuilder<List<UserPostsRecord>>(
                           stream: queryUserPostsRecord(
                             queryBuilder: (userPostsRecord) => userPostsRecord
@@ -331,8 +338,8 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 50,
-                                  height: 50,
+                                  width: 50.0,
+                                  height: 50.0,
                                   child: CircularProgressIndicator(
                                     valueColor: AlwaysStoppedAnimation<Color>(
                                       FlutterFlowTheme.of(context).primary,
@@ -346,8 +353,8 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                             if (socialFeedUserPostsRecordList.isEmpty) {
                               return Center(
                                 child: Container(
-                                  width: 330,
-                                  height: 330,
+                                  width: 330.0,
+                                  height: 330.0,
                                   child: EmptyList1Widget(),
                                 ),
                               );
@@ -364,7 +371,7 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                                           socialFeedIndex];
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 4, 0, 0),
+                                        0.0, 16.0, 0.0, 16.0),
                                     child: FutureBuilder<UsersRecord>(
                                       future: UsersRecord.getDocumentOnce(
                                           socialFeedUserPostsRecord.postUser!),
@@ -373,8 +380,8 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                                         if (!snapshot.hasData) {
                                           return Center(
                                             child: SizedBox(
-                                              width: 50,
-                                              height: 50,
+                                              width: 50.0,
+                                              height: 50.0,
                                               child: CircularProgressIndicator(
                                                 valueColor:
                                                     AlwaysStoppedAnimation<
@@ -390,401 +397,476 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                                         final userPostUsersRecord =
                                             snapshot.data!;
 
-                                        return Container(
-                                          width: double.infinity,
-                                          constraints: BoxConstraints(
-                                            maxWidth: 670,
-                                          ),
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 0,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                offset: Offset(
-                                                  0.0,
-                                                  1,
-                                                ),
-                                              )
-                                            ],
+                                        return Material(
+                                          color: Colors.transparent,
+                                          elevation: 5.0,
+                                          shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(20),
-                                              bottomRight: Radius.circular(20),
-                                              topLeft: Radius.circular(20),
-                                              topRight: Radius.circular(20),
+                                              bottomLeft: Radius.circular(20.0),
+                                              bottomRight:
+                                                  Radius.circular(20.0),
+                                              topLeft: Radius.circular(20.0),
+                                              topRight: Radius.circular(20.0),
                                             ),
                                           ),
-                                          child: Builder(
-                                            builder: (context) => InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                if (MediaQuery.sizeOf(context)
-                                                        .width >=
-                                                    1271.0) {
-                                                  await showDialog(
-                                                    context: context,
-                                                    builder: (dialogContext) {
-                                                      return Dialog(
-                                                        elevation: 0,
-                                                        insetPadding:
-                                                            EdgeInsets.zero,
-                                                        backgroundColor:
-                                                            Colors.transparent,
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                    0, 0)
-                                                                .resolve(
-                                                                    Directionality.of(
-                                                                        context)),
-                                                        child:
-                                                            PostModalViewWidget(
-                                                          postRef:
-                                                              socialFeedUserPostsRecord,
-                                                          userRef:
-                                                              userPostUsersRecord,
-                                                        ),
-                                                      );
-                                                    },
-                                                  );
-                                                } else {
-                                                  context.pushNamed(
-                                                    'postDetails_Page',
-                                                    queryParameters: {
-                                                      'userRecord':
-                                                          serializeParam(
-                                                        userPostUsersRecord,
-                                                        ParamType.Document,
-                                                      ),
-                                                      'postReference':
-                                                          serializeParam(
-                                                        socialFeedUserPostsRecord,
-                                                        ParamType.Document,
-                                                      ),
-                                                    }.withoutNulls,
-                                                    extra: <String, dynamic>{
-                                                      'userRecord':
-                                                          userPostUsersRecord,
-                                                      'postReference':
-                                                          socialFeedUserPostsRecord,
-                                                    },
-                                                  );
-                                                }
-                                              },
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(10, 0,
-                                                                    5, 0),
-                                                        child: Container(
-                                                          width: 44,
-                                                          height: 44,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .accent1,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                            border: Border.all(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              width: 2,
-                                                            ),
-                                                          ),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsets.all(
-                                                                    2),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                context.pushNamed(
-                                                                    'main_Profile');
-                                                              },
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            44),
-                                                                child:
-                                                                    CachedNetworkImage(
-                                                                  fadeInDuration:
-                                                                      Duration(
-                                                                          milliseconds:
-                                                                              500),
-                                                                  fadeOutDuration:
-                                                                      Duration(
-                                                                          milliseconds:
-                                                                              500),
-                                                                  imageUrl:
-                                                                      socialFeedUserPostsRecord
-                                                                          .postPhoto,
-                                                                  width: 40,
-                                                                  height: 40,
-                                                                  fit: BoxFit
-                                                                      .cover,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            userPostUsersRecord
-                                                                .userName,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .titleLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ],
+                                          child: Container(
+                                            width: double.infinity,
+                                            constraints: BoxConstraints(
+                                              maxWidth: 670.0,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  blurRadius: 0.0,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .alternate,
+                                                  offset: Offset(
+                                                    0.0,
+                                                    1.0,
                                                   ),
-                                                  if (socialFeedUserPostsRecord
-                                                              .postPhoto !=
-                                                          null &&
-                                                      socialFeedUserPostsRecord
-                                                              .postPhoto !=
-                                                          '')
-                                                    FlutterFlowMediaDisplay(
-                                                      path:
-                                                          socialFeedUserPostsRecord
-                                                              .postPhoto,
-                                                      imageBuilder: (path) =>
-                                                          CachedNetworkImage(
-                                                        fadeInDuration:
-                                                            Duration(
-                                                                milliseconds:
-                                                                    0),
-                                                        fadeOutDuration:
-                                                            Duration(
-                                                                milliseconds:
-                                                                    0),
-                                                        imageUrl: path,
-                                                        width:
-                                                            MediaQuery.sizeOf(
-                                                                    context)
-                                                                .width,
-                                                        height: 350,
-                                                        fit: BoxFit.cover,
-                                                      ),
-                                                      videoPlayerBuilder: (path) =>
-                                                          FlutterFlowVideoPlayer(
-                                                        path: path,
-                                                        width: double.infinity,
-                                                        height: double.infinity,
-                                                        autoPlay: false,
-                                                        looping: false,
-                                                        showControls: false,
-                                                        allowFullScreen: true,
-                                                        allowPlaybackSpeedMenu:
-                                                            false,
-                                                      ),
-                                                    ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                2, 4, 0, 0),
-                                                    child: Row(
+                                                )
+                                              ],
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft:
+                                                    Radius.circular(20.0),
+                                                bottomRight:
+                                                    Radius.circular(20.0),
+                                                topLeft: Radius.circular(20.0),
+                                                topRight: Radius.circular(20.0),
+                                              ),
+                                            ),
+                                            child: Builder(
+                                              builder: (context) => InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  if (MediaQuery.sizeOf(context)
+                                                          .width >=
+                                                      1271.0) {
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder: (dialogContext) {
+                                                        return Dialog(
+                                                          elevation: 0,
+                                                          insetPadding:
+                                                              EdgeInsets.zero,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          alignment: AlignmentDirectional(
+                                                                  0.0, 0.0)
+                                                              .resolve(
+                                                                  Directionality.of(
+                                                                      context)),
+                                                          child:
+                                                              PostModalViewWidget(
+                                                            postRef:
+                                                                socialFeedUserPostsRecord,
+                                                            userRef:
+                                                                userPostUsersRecord,
+                                                          ),
+                                                        );
+                                                      },
+                                                    );
+                                                  } else {
+                                                    context.pushNamed(
+                                                      'postDetails_Page',
+                                                      queryParameters: {
+                                                        'userRecord':
+                                                            serializeParam(
+                                                          userPostUsersRecord,
+                                                          ParamType.Document,
+                                                        ),
+                                                        'postReference':
+                                                            serializeParam(
+                                                          socialFeedUserPostsRecord,
+                                                          ParamType.Document,
+                                                        ),
+                                                      }.withoutNulls,
+                                                      extra: <String, dynamic>{
+                                                        'userRecord':
+                                                            userPostUsersRecord,
+                                                        'postReference':
+                                                            socialFeedUserPostsRecord,
+                                                      },
+                                                    );
+                                                  }
+                                                },
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
-                                                        Expanded(
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        12,
-                                                                        12,
-                                                                        12,
-                                                                        12),
-                                                            child: Text(
-                                                              key: ValueKey(
-                                                                  'I prefer to stay within 80 characters (79, actually, to avoid spurious line breaks when I am using, eg, an xterm window) with 4-character indents.'),
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                socialFeedUserPostsRecord
-                                                                    .postDescription,
-                                                                'I\'m back with a super quick Instagram redesign just for the fan. Rounded corners and cute icons, what else do we need, haha.⁣ ',
-                                                              ).maybeHandleOverflow(
-                                                                maxChars: 100,
-                                                                replacement:
-                                                                    '…',
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0),
+                                                          child: Container(
+                                                            width: 44.0,
+                                                            height: 44.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .accent1,
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                width: 2.0,
                                                               ),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(2.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  context.pushNamed(
+                                                                      'main_Profile');
+                                                                },
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              44.0),
+                                                                  child:
+                                                                      CachedNetworkImage(
+                                                                    fadeInDuration:
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                500),
+                                                                    fadeOutDuration:
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                500),
+                                                                    imageUrl:
+                                                                        socialFeedUserPostsRecord
+                                                                            .postPhoto,
+                                                                    width: 40.0,
+                                                                    height:
+                                                                        40.0,
+                                                                    fit: BoxFit
+                                                                        .cover,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              userPostUsersRecord
+                                                                  .userName,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .bodyMedium
+                                                                  .titleLarge
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Figtree',
+                                                                        'Outfit',
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
                                                             ),
-                                                          ),
+                                                          ],
                                                         ),
                                                       ],
                                                     ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                8, 4, 8, 0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
-                                                      children: [
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Padding(
+                                                    if (socialFeedUserPostsRecord
+                                                                .postPhoto !=
+                                                            null &&
+                                                        socialFeedUserPostsRecord
+                                                                .postPhoto !=
+                                                            '')
+                                                      FlutterFlowMediaDisplay(
+                                                        path:
+                                                            socialFeedUserPostsRecord
+                                                                .postPhoto,
+                                                        imageBuilder: (path) =>
+                                                            CachedNetworkImage(
+                                                          fadeInDuration:
+                                                              Duration(
+                                                                  milliseconds:
+                                                                      0),
+                                                          fadeOutDuration:
+                                                              Duration(
+                                                                  milliseconds:
+                                                                      0),
+                                                          imageUrl: path,
+                                                          width:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .width *
+                                                                  1.0,
+                                                          height: 150.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                        videoPlayerBuilder:
+                                                            (path) =>
+                                                                FlutterFlowVideoPlayer(
+                                                          path: path,
+                                                          width:
+                                                              double.infinity,
+                                                          height:
+                                                              double.infinity,
+                                                          autoPlay: false,
+                                                          looping: false,
+                                                          showControls: false,
+                                                          allowFullScreen: true,
+                                                          allowPlaybackSpeedMenu:
+                                                              false,
+                                                        ),
+                                                      ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  2.0,
+                                                                  4.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          16,
-                                                                          0),
-                                                              child: Row(
+                                                                          12.0,
+                                                                          12.0,
+                                                                          12.0,
+                                                                          12.0),
+                                                              child: Text(
+                                                                key: ValueKey(
+                                                                    'I prefer to stay within 80 characters (79, actually, to avoid spurious line breaks when I am using, eg, an xterm window) with 4-character indents.'),
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  socialFeedUserPostsRecord
+                                                                      .postDescription,
+                                                                  'I\'m back with a super quick Instagram redesign just for the fan. Rounded corners and cute icons, what else do we need, haha.⁣ ',
+                                                                ).maybeHandleOverflow(
+                                                                  maxChars: 100,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Figtree',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  8.0,
+                                                                  4.0,
+                                                                  8.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            16.0,
+                                                                            0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Container(
+                                                                      width:
+                                                                          41.0,
+                                                                      height:
+                                                                          41.0,
+                                                                      child:
+                                                                          Stack(
+                                                                        children: [
+                                                                          if (!socialFeedUserPostsRecord
+                                                                              .likes
+                                                                              .contains(currentUserReference))
+                                                                            Align(
+                                                                              alignment: AlignmentDirectional(0.0, 0.25),
+                                                                              child: InkWell(
+                                                                                splashColor: Colors.transparent,
+                                                                                focusColor: Colors.transparent,
+                                                                                hoverColor: Colors.transparent,
+                                                                                highlightColor: Colors.transparent,
+                                                                                onTap: () async {
+                                                                                  await socialFeedUserPostsRecord.reference.update({
+                                                                                    ...mapToFirestore(
+                                                                                      {
+                                                                                        'likes': FieldValue.arrayUnion([
+                                                                                          currentUserReference
+                                                                                        ]),
+                                                                                      },
+                                                                                    ),
+                                                                                  });
+                                                                                  if (animationsMap['iconOnActionTriggerAnimation'] != null) {
+                                                                                    safeSetState(() => hasIconTriggered = true);
+                                                                                    SchedulerBinding.instance.addPostFrameCallback((_) async => await animationsMap['iconOnActionTriggerAnimation']!.controller.forward(from: 0.0));
+                                                                                  }
+                                                                                },
+                                                                                child: Icon(
+                                                                                  Icons.favorite_border,
+                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                  size: 25.0,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          if (socialFeedUserPostsRecord
+                                                                              .likes
+                                                                              .contains(currentUserReference))
+                                                                            Align(
+                                                                              alignment: AlignmentDirectional(0.0, 0.25),
+                                                                              child: InkWell(
+                                                                                splashColor: Colors.transparent,
+                                                                                focusColor: Colors.transparent,
+                                                                                hoverColor: Colors.transparent,
+                                                                                highlightColor: Colors.transparent,
+                                                                                onTap: () async {
+                                                                                  await socialFeedUserPostsRecord.reference.update({
+                                                                                    ...mapToFirestore(
+                                                                                      {
+                                                                                        'likes': FieldValue.arrayRemove([
+                                                                                          currentUserReference
+                                                                                        ]),
+                                                                                      },
+                                                                                    ),
+                                                                                  });
+                                                                                },
+                                                                                child: Icon(
+                                                                                  Icons.favorite_rounded,
+                                                                                  color: valueOrDefault<Color>(
+                                                                                    socialFeedUserPostsRecord.likes.isNotEmpty ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).primaryBackground,
+                                                                                    FlutterFlowTheme.of(context).primaryBackground,
+                                                                                  ),
+                                                                                  size: 25.0,
+                                                                                ),
+                                                                              ).animateOnActionTrigger(animationsMap['iconOnActionTriggerAnimation']!, hasBeenTriggered: hasIconTriggered),
+                                                                            ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Text(
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          functions
+                                                                              .likes(socialFeedUserPostsRecord)
+                                                                              .toString(),
+                                                                          '0',
+                                                                        ),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .override(
+                                                                              fontFamily: 'Figtree',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,
                                                                 children: [
-                                                                  Container(
-                                                                    width: 41,
-                                                                    height: 41,
-                                                                    child:
-                                                                        Stack(
-                                                                      children: [
-                                                                        if (!socialFeedUserPostsRecord
-                                                                            .likes
-                                                                            .contains(currentUserReference))
-                                                                          Align(
-                                                                            alignment:
-                                                                                AlignmentDirectional(0, 0.25),
-                                                                            child:
-                                                                                InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                await socialFeedUserPostsRecord.reference.update({
-                                                                                  ...mapToFirestore(
-                                                                                    {
-                                                                                      'likes': FieldValue.arrayUnion([
-                                                                                        currentUserReference
-                                                                                      ]),
-                                                                                    },
-                                                                                  ),
-                                                                                });
-                                                                                if (animationsMap['iconOnActionTriggerAnimation'] != null) {
-                                                                                  safeSetState(() => hasIconTriggered = true);
-                                                                                  SchedulerBinding.instance.addPostFrameCallback((_) async => await animationsMap['iconOnActionTriggerAnimation']!.controller.forward(from: 0.0));
-                                                                                }
-                                                                              },
-                                                                              child: Icon(
-                                                                                Icons.favorite_border,
-                                                                                color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                size: 25,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        if (socialFeedUserPostsRecord
-                                                                            .likes
-                                                                            .contains(currentUserReference))
-                                                                          Align(
-                                                                            alignment:
-                                                                                AlignmentDirectional(0, 0.25),
-                                                                            child:
-                                                                                InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                await socialFeedUserPostsRecord.reference.update({
-                                                                                  ...mapToFirestore(
-                                                                                    {
-                                                                                      'likes': FieldValue.arrayRemove([
-                                                                                        currentUserReference
-                                                                                      ]),
-                                                                                    },
-                                                                                  ),
-                                                                                });
-                                                                              },
-                                                                              child: Icon(
-                                                                                Icons.favorite_rounded,
-                                                                                color: valueOrDefault<Color>(
-                                                                                  socialFeedUserPostsRecord.likes.isNotEmpty ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  FlutterFlowTheme.of(context).primaryBackground,
-                                                                                ),
-                                                                                size: 25,
-                                                                              ),
-                                                                            ).animateOnActionTrigger(animationsMap['iconOnActionTriggerAnimation']!, hasBeenTriggered: hasIconTriggered),
-                                                                          ),
-                                                                      ],
+                                                                  Icon(
+                                                                    Icons
+                                                                        .mode_comment,
+                                                                    color: valueOrDefault<
+                                                                        Color>(
+                                                                      socialFeedUserPostsRecord.numComments > 0
+                                                                          ? FlutterFlowTheme.of(context)
+                                                                              .primary
+                                                                          : FlutterFlowTheme.of(context)
+                                                                              .primaryBackground,
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
                                                                     ),
+                                                                    size: 24.0,
                                                                   ),
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            4,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            4.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child: Text(
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                        functions
-                                                                            .likes(socialFeedUserPostsRecord)
-                                                                            .toString(),
-                                                                        '0',
-                                                                      ),
+                                                                      socialFeedUserPostsRecord
+                                                                          .numComments
+                                                                          .toString(),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelMedium
@@ -798,82 +880,94 @@ class _MainFeedWidgetState extends State<MainFeedWidget>
                                                                   ),
                                                                 ],
                                                               ),
-                                                            ),
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Icon(
-                                                                  Icons
-                                                                      .mode_comment,
-                                                                  color:
+                                                            ],
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .start,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  dateTimeFormat(
+                                                                      "relative",
+                                                                      socialFeedUserPostsRecord
+                                                                          .timePosted!),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .start,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Figtree',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                              Builder(
+                                                                builder:
+                                                                    (context) =>
+                                                                        InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    await Share
+                                                                        .share(
                                                                       valueOrDefault<
-                                                                          Color>(
-                                                                    socialFeedUserPostsRecord.numComments >
-                                                                            0
-                                                                        ? FlutterFlowTheme.of(context)
-                                                                            .primary
-                                                                        : FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                    FlutterFlowTheme.of(
+                                                                          String>(
+                                                                        'Found this helpful tip on Duuet that I think you’ll love! 🌟 Here’s a quick snippet:${'\n'}${socialFeedUserPostsRecord.postDescription}${'\n'}Want more personalized skin and hair care tips like this? Join me on Duuet, India’s leading community for all things skin and hair care. Connect, learn, and share!',
+                                                                        'Found this helpful tip on Duuet that I think you’ll love! 🌟 ',
+                                                                      ),
+                                                                      sharePositionOrigin:
+                                                                          getWidgetBoundingBox(
+                                                                              context),
+                                                                    );
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .ios_share,
+                                                                    color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .primaryBackground,
-                                                                  ),
-                                                                  size: 24,
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          4,
-                                                                          0,
-                                                                          0,
-                                                                          0),
-                                                                  child: Text(
-                                                                    socialFeedUserPostsRecord
-                                                                        .numComments
-                                                                        .toString(),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Figtree',
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
+                                                                        .secondaryText,
+                                                                    size: 24.0,
                                                                   ),
                                                                 ),
-                                                              ],
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Text(
-                                                              dateTimeFormat(
-                                                                  "relative",
-                                                                  socialFeedUserPostsRecord
-                                                                      .timePosted!),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Figtree',
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ],
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
-                                                  ),
-                                                ].divide(SizedBox(height: 5)),
-                                              ),
+                                                  ].divide(
+                                                      SizedBox(height: 5.0)),
+                                                ),
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'columnOnPageLoadAnimation']!),
                                             ),
                                           ),
                                         );

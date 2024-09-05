@@ -40,7 +40,7 @@ class _EmptyList2WidgetState extends State<EmptyList2Widget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0, -1),
+      alignment: AlignmentDirectional(0.0, -1.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -48,10 +48,10 @@ class _EmptyList2WidgetState extends State<EmptyList2Widget> {
           Icon(
             Icons.forum,
             color: FlutterFlowTheme.of(context).primary,
-            size: 90,
+            size: 90.0,
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
             child: Text(
               'No Messages',
               textAlign: TextAlign.center,
@@ -63,7 +63,7 @@ class _EmptyList2WidgetState extends State<EmptyList2Widget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(32, 8, 32, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(32.0, 8.0, 32.0, 0.0),
             child: Text(
               'It seems you don\'t have any messages with other users. Begin a chat below.',
               textAlign: TextAlign.center,
