@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1035562816092-8d9n1vo86reii7gcbkl5c78tfb60j4t7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.care.duuet",
+            "certificate_hash": "3fa33f02559669633152233979a16f32c0f2f84a"
+          }
+        },
+        {
           "client_id": "1035562816092-moodjabpd0b9gjqcn3ojo2riod58m6jg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

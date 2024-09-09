@@ -14,6 +14,7 @@ import 'schema/dogs_record.dart';
 import 'schema/friends_record.dart';
 import 'schema/chats_record.dart';
 import 'schema/chat_messages_record.dart';
+import 'schema/delete_requests_record.dart';
 import 'dart:async';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
@@ -33,6 +34,7 @@ export 'schema/dogs_record.dart';
 export 'schema/friends_record.dart';
 export 'schema/chats_record.dart';
 export 'schema/chat_messages_record.dart';
+export 'schema/delete_requests_record.dart';
 
 /// Functions to query UserPostsRecords (as a Stream and as a Future).
 Future<int> queryUserPostsRecordCount({
@@ -717,6 +719,84 @@ Future<FFFirestorePage<ChatMessagesRecord>> queryChatMessagesRecordPage({
       if (isStream) {
         final streamSubscription =
             (page.dataStream)?.listen((List<ChatMessagesRecord> data) {
+          data.forEach((item) {
+            final itemIndexes = controller.itemList!
+                .asMap()
+                .map((k, v) => MapEntry(v.reference.id, k));
+            final index = itemIndexes[item.reference.id];
+            final items = controller.itemList!;
+            if (index != null) {
+              items.replaceRange(index, index + 1, [item]);
+              controller.itemList = {
+                for (var item in items) item.reference: item
+              }.values.toList();
+            }
+          });
+        });
+        streamSubscriptions?.add(streamSubscription);
+      }
+      return page;
+    });
+
+/// Functions to query DeleteRequestsRecords (as a Stream and as a Future).
+Future<int> queryDeleteRequestsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      DeleteRequestsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<DeleteRequestsRecord>> queryDeleteRequestsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      DeleteRequestsRecord.collection,
+      DeleteRequestsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<DeleteRequestsRecord>> queryDeleteRequestsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      DeleteRequestsRecord.collection,
+      DeleteRequestsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+Future<FFFirestorePage<DeleteRequestsRecord>> queryDeleteRequestsRecordPage({
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+  required PagingController<DocumentSnapshot?, DeleteRequestsRecord> controller,
+  List<StreamSubscription?>? streamSubscriptions,
+}) =>
+    queryCollectionPage(
+      DeleteRequestsRecord.collection,
+      DeleteRequestsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    ).then((page) {
+      controller.appendPage(
+        page.data,
+        page.nextPageMarker,
+      );
+      if (isStream) {
+        final streamSubscription =
+            (page.dataStream)?.listen((List<DeleteRequestsRecord> data) {
           data.forEach((item) {
             final itemIndexes = controller.itemList!
                 .asMap()

@@ -30,6 +30,7 @@ class _MainChatWidgetState extends State<MainChatWidget> {
     super.initState();
     _model = createModel(context, () => MainChatModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'main_Chat'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -79,6 +80,10 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                         size: 24.0,
                       ),
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'MAIN_CHAT_PAGE_add_comment_ICN_ON_TAP');
+                        logFirebaseEvent('IconButton_navigate_to');
+
                         context.pushNamed(
                           'chat_2_InviteUsers',
                           extra: <String, dynamic>{
@@ -131,36 +136,17 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                 0.0, 12.0, 0.0, 12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 8.0, 0.0),
-                                  child: Icon(
-                                    Icons.alternate_email_rounded,
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    size: 44.0,
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 12.0, 0.0),
-                                    child: Text(
-                                      'treads.io',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 12.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'MAIN_CHAT_PAGE_NEW_MESSAGE_BTN_ON_TAP');
+                                      logFirebaseEvent('Button_navigate_to');
+
                                       context.pushNamed(
                                         'chat_2_InviteUsers',
                                         extra: <String, dynamic>{
@@ -268,6 +254,11 @@ class _MainChatWidgetState extends State<MainChatWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        logFirebaseEvent(
+                                            'MAIN_CHAT_PAGE_Container_rkapgesi_ON_TAP');
+                                        logFirebaseEvent(
+                                            'Container_navigate_to');
+
                                         context.pushNamed(
                                           'chat_2_Details',
                                           queryParameters: {

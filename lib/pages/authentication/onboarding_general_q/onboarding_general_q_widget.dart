@@ -30,6 +30,8 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
     super.initState();
     _model = createModel(context, () => OnboardingGeneralQModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'onboardingGeneralQ'});
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
@@ -306,6 +308,10 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'ONBOARDING_GENERAL_Q_COMPLETE_FORM_BTN_O');
+                        logFirebaseEvent('Button_backend_call');
+
                         await currentUserReference!.update({
                           ...createUsersRecordData(
                             city: _model.textController.text,
@@ -318,6 +324,7 @@ class _OnboardingGeneralQWidgetState extends State<OnboardingGeneralQWidget> {
                             },
                           ),
                         });
+                        logFirebaseEvent('Button_navigate_to');
 
                         context.goNamed('main_Feed');
                       },

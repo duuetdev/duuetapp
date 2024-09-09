@@ -28,6 +28,8 @@ class _OnboardingAnyOtherWidgetState extends State<OnboardingAnyOtherWidget> {
     super.initState();
     _model = createModel(context, () => OnboardingAnyOtherModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'onboardingAnyOther'});
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
@@ -183,10 +185,15 @@ class _OnboardingAnyOtherWidgetState extends State<OnboardingAnyOtherWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'ONBOARDING_ANY_OTHER_NEXT_BTN_ON_TAP');
+                        logFirebaseEvent('Button_backend_call');
+
                         await currentUserReference!
                             .update(createUsersRecordData(
                           otherConcerns: _model.textController.text,
                         ));
+                        logFirebaseEvent('Button_navigate_to');
 
                         context.goNamed('onboardingGeneralQ');
                       },

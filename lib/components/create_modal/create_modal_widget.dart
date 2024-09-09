@@ -92,6 +92,10 @@ class _CreateModalWidgetState extends State<CreateModalWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
+                          logFirebaseEvent(
+                              'CREATE_MODAL_Container_adpia5ej_ON_TAP');
+                          logFirebaseEvent('Container_navigate_to');
+
                           context.pushNamed(
                             'createPost',
                             extra: <String, dynamic>{

@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -69,7 +70,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                 height: 40.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).accent1,
-                  borderRadius: BorderRadius.circular(12.0),
+                  shape: BoxShape.circle,
                   border: Border.all(
                     color: FlutterFlowTheme.of(context).primary,
                     width: 2.0,
@@ -78,11 +79,13 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                 child: Padding(
                   padding: EdgeInsets.all(2.0),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
-                    child: Image.network(
-                      widget!.userRef!.photoUrl,
-                      width: 32.0,
-                      height: 32.0,
+                    borderRadius: BorderRadius.circular(44.0),
+                    child: CachedNetworkImage(
+                      fadeInDuration: Duration(milliseconds: 500),
+                      fadeOutDuration: Duration(milliseconds: 500),
+                      imageUrl: widget!.userRef!.photoUrl,
+                      width: 40.0,
+                      height: 40.0,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -112,7 +115,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                         child: Text(
                           valueOrDefault<String>(
-                            widget!.userRef?.role,
+                            widget!.userRef?.bio,
                             '--',
                           ),
                           style:

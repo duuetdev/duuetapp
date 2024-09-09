@@ -24,6 +24,7 @@ class _FirstPageWidgetState extends State<FirstPageWidget> {
     super.initState();
     _model = createModel(context, () => FirstPageModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'firstPage'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -45,11 +46,12 @@ class _FirstPageWidgetState extends State<FirstPageWidget> {
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Flexible(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     ClipRRect(
@@ -57,7 +59,7 @@ class _FirstPageWidgetState extends State<FirstPageWidget> {
                       child: Image.asset(
                         'assets/images/WhatsApp_logo.png',
                         width: double.infinity,
-                        height: 570.0,
+                        height: 732.0,
                         fit: BoxFit.contain,
                       ),
                     ),
@@ -67,12 +69,16 @@ class _FirstPageWidgetState extends State<FirstPageWidget> {
                           EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          logFirebaseEvent(
+                              'FIRST_PAGE_PAGE_JOIN_NOW_BTN_ON_TAP');
+                          logFirebaseEvent('Button_navigate_to');
+
                           context.pushNamed('createAccount');
                         },
                         text: 'Join Now',
                         options: FFButtonOptions(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              32.0, 0.0, 32.0, 0.0),
+                              32.0, 10.0, 32.0, 10.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
@@ -96,12 +102,15 @@ class _FirstPageWidgetState extends State<FirstPageWidget> {
                           24.0, 24.0, 24.0, 12.0),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          logFirebaseEvent('FIRST_PAGE_PAGE_LOGIN_BTN_ON_TAP');
+                          logFirebaseEvent('Button_navigate_to');
+
                           context.pushNamed('login');
                         },
                         text: 'Login',
                         options: FFButtonOptions(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                              32.0, 10.0, 32.0, 10.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color:

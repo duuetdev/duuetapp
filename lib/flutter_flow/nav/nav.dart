@@ -10,6 +10,8 @@ import '/backend/schema/enums/enums.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
+import '/backend/push_notifications/push_notifications_handler.dart'
+    show PushNotificationsHandler;
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -105,21 +107,25 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'createDogProfile',
           path: '/createDogProfile',
+          requireAuth: true,
           builder: (context, params) => CreateDogProfileWidget(),
         ),
         FFRoute(
           name: 'createYourProfile',
           path: '/createYourProfile',
+          requireAuth: true,
           builder: (context, params) => CreateYourProfileWidget(),
         ),
         FFRoute(
           name: 'forgotPassword',
           path: '/forgotPassword',
+          requireAuth: true,
           builder: (context, params) => ForgotPasswordWidget(),
         ),
         FFRoute(
           name: 'main_Feed',
           path: '/mainFeed',
+          requireAuth: true,
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'main_Feed')
               : MainFeedWidget(
@@ -132,6 +138,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'main_Profile',
           path: '/mainProfile',
+          requireAuth: true,
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'main_Profile')
               : MainProfileWidget(),
@@ -139,11 +146,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'createPost',
           path: '/createPost',
+          requireAuth: true,
           builder: (context, params) => CreatePostWidget(),
         ),
         FFRoute(
           name: 'postDetails_Page',
           path: '/postDetailsPage',
+          requireAuth: true,
           asyncParams: {
             'postReference':
                 getDoc(['userPosts'], UserPostsRecord.fromSnapshot),
@@ -163,16 +172,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'editSettings',
           path: '/editSettings',
+          requireAuth: true,
           builder: (context, params) => EditSettingsWidget(),
         ),
         FFRoute(
           name: 'editUserProfile',
           path: '/editUserProfile',
+          requireAuth: true,
           builder: (context, params) => EditUserProfileWidget(),
         ),
         FFRoute(
           name: 'editDogProfile',
           path: '/editDogProfile',
+          requireAuth: true,
           asyncParams: {
             'dogProfile': getDoc(['dogs'], DogsRecord.fromSnapshot),
           },
@@ -186,11 +198,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'changePassword',
           path: '/changePassword',
+          requireAuth: true,
           builder: (context, params) => ChangePasswordWidget(),
         ),
         FFRoute(
           name: 'viewProfilePageOther',
           path: '/viewProfilePageOther',
+          requireAuth: true,
           asyncParams: {
             'userDetails': getDoc(['users'], UsersRecord.fromSnapshot),
           },
@@ -212,11 +226,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'createDogProfile_New',
           path: '/createDogProfileNew',
+          requireAuth: true,
           builder: (context, params) => CreateDogProfileNewWidget(),
         ),
         FFRoute(
           name: 'chat_2_Details',
           path: '/chat2Details',
+          requireAuth: true,
           asyncParams: {
             'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
           },
@@ -230,6 +246,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'main_Chat',
           path: '/mainChat',
+          requireAuth: true,
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'main_Chat')
               : MainChatWidget(),
@@ -237,6 +254,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'chat_2_InviteUsers',
           path: '/chat2InviteUsers',
+          requireAuth: true,
           asyncParams: {
             'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
           },
@@ -250,6 +268,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'image_Details',
           path: '/imageDetails',
+          requireAuth: true,
           asyncParams: {
             'chatMessage':
                 getDoc(['chat_messages'], ChatMessagesRecord.fromSnapshot),
@@ -264,6 +283,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'onboardingAge',
           path: '/onboardingAge',
+          requireAuth: true,
           builder: (context, params) => OnboardingAgeWidget(),
         ),
         FFRoute(
@@ -274,41 +294,49 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'onboardingGender',
           path: '/onboardingGender',
+          requireAuth: true,
           builder: (context, params) => OnboardingGenderWidget(),
         ),
         FFRoute(
           name: 'onboardingConcerns',
           path: '/onboardingConcerns',
+          requireAuth: true,
           builder: (context, params) => OnboardingConcernsWidget(),
         ),
         FFRoute(
           name: 'onboardingSkinCare',
           path: '/onboardingSkinCare',
+          requireAuth: true,
           builder: (context, params) => OnboardingSkinCareWidget(),
         ),
         FFRoute(
           name: 'onboardingHairCare',
           path: '/onboardingHairCare',
+          requireAuth: true,
           builder: (context, params) => OnboardingHairCareWidget(),
         ),
         FFRoute(
           name: 'onboardingAnyOther',
           path: '/onboardingAnyOther',
+          requireAuth: true,
           builder: (context, params) => OnboardingAnyOtherWidget(),
         ),
         FFRoute(
           name: 'onboardingGeneralQ',
           path: '/onboardingGeneralQ',
+          requireAuth: true,
           builder: (context, params) => OnboardingGeneralQWidget(),
         ),
         FFRoute(
           name: 'onboardingInter',
           path: '/onboardingInter',
+          requireAuth: true,
           builder: (context, params) => OnboardingInterWidget(),
         ),
         FFRoute(
           name: 'myConditionsPage',
           path: '/myConditionsPage',
+          requireAuth: true,
           asyncParams: {
             'userRef': getDoc(['users'], UsersRecord.fromSnapshot),
           },
@@ -322,10 +350,39 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'othersConditionsPage',
           path: '/othersConditionsPage',
+          requireAuth: true,
           asyncParams: {
             'userRef': getDoc(['users'], UsersRecord.fromSnapshot),
           },
           builder: (context, params) => OthersConditionsPageWidget(
+            userRef: params.getParam(
+              'userRef',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'myClinicalProfile',
+          path: '/myClinicalProfile',
+          requireAuth: true,
+          asyncParams: {
+            'userRef': getDoc(['users'], UsersRecord.fromSnapshot),
+          },
+          builder: (context, params) => MyClinicalProfileWidget(
+            userRef: params.getParam(
+              'userRef',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'othersClinicalProfile',
+          path: '/othersClinicalProfile',
+          requireAuth: true,
+          asyncParams: {
+            'userRef': getDoc(['users'], UsersRecord.fromSnapshot),
+          },
+          builder: (context, params) => OthersClinicalProfileWidget(
             userRef: params.getParam(
               'userRef',
               ParamType.Document,
@@ -523,7 +580,7 @@ class FFRoute {
                     fit: BoxFit.cover,
                   ),
                 )
-              : page;
+              : PushNotificationsHandler(child: page);
 
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition

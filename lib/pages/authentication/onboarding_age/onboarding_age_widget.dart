@@ -27,6 +27,8 @@ class _OnboardingAgeWidgetState extends State<OnboardingAgeWidget> {
     super.initState();
     _model = createModel(context, () => OnboardingAgeModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'onboardingAge'});
     _model.ageTextController ??= TextEditingController();
     _model.ageFocusNode ??= FocusNode();
 
@@ -233,10 +235,14 @@ class _OnboardingAgeWidgetState extends State<OnboardingAgeWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        logFirebaseEvent('ONBOARDING_AGE_PAGE_NEXT_BTN_ON_TAP');
+                        logFirebaseEvent('Button_backend_call');
+
                         await currentUserReference!
                             .update(createUsersRecordData(
                           age: int.tryParse(_model.ageTextController.text),
                         ));
+                        logFirebaseEvent('Button_navigate_to');
 
                         context.goNamed('onboardingGender');
                       },

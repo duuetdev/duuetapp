@@ -111,8 +111,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                             height: 36.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).accent1,
-                              borderRadius: BorderRadius.circular(12.0),
-                              shape: BoxShape.rectangle,
+                              shape: BoxShape.circle,
                               border: Border.all(
                                 color: FlutterFlowTheme.of(context).primary,
                                 width: 2.0,
@@ -121,13 +120,13 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                             child: Padding(
                               padding: EdgeInsets.all(2.0),
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(44.0),
                                 child: CachedNetworkImage(
-                                  fadeInDuration: Duration(milliseconds: 200),
-                                  fadeOutDuration: Duration(milliseconds: 200),
+                                  fadeInDuration: Duration(milliseconds: 500),
+                                  fadeOutDuration: Duration(milliseconds: 500),
                                   imageUrl: otherUserUsersRecord.photoUrl,
-                                  width: 44.0,
-                                  height: 44.0,
+                                  width: 40.0,
+                                  height: 40.0,
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -209,6 +208,11 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        logFirebaseEvent(
+                                            'CHAT_THREAD_MediaDisplay_k9naxnjk_ON_TAP');
+                                        logFirebaseEvent(
+                                            'MediaDisplay_navigate_to');
+
                                         context.pushNamed(
                                           'image_Details',
                                           queryParameters: {
@@ -300,8 +304,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                         height: 36.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).accent1,
-                          borderRadius: BorderRadius.circular(12.0),
-                          shape: BoxShape.rectangle,
+                          shape: BoxShape.circle,
                           border: Border.all(
                             color: FlutterFlowTheme.of(context).primary,
                             width: 2.0,
@@ -311,13 +314,13 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                           padding: EdgeInsets.all(2.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(44.0),
                               child: CachedNetworkImage(
-                                fadeInDuration: Duration(milliseconds: 200),
-                                fadeOutDuration: Duration(milliseconds: 200),
+                                fadeInDuration: Duration(milliseconds: 500),
+                                fadeOutDuration: Duration(milliseconds: 500),
                                 imageUrl: currentUserPhoto,
-                                width: 44.0,
-                                height: 44.0,
+                                width: 40.0,
+                                height: 40.0,
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -401,6 +404,11 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'CHAT_THREAD_MediaDisplay_mci5d2zj_ON_TAP');
+                                    logFirebaseEvent(
+                                        'MediaDisplay_navigate_to');
+
                                     context.pushNamed(
                                       'image_Details',
                                       queryParameters: {

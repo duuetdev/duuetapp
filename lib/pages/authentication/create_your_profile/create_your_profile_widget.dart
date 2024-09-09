@@ -30,6 +30,8 @@ class _CreateYourProfileWidgetState extends State<CreateYourProfileWidget> {
     super.initState();
     _model = createModel(context, () => CreateYourProfileModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'createYourProfile'});
     _model.userNameTextController ??= TextEditingController();
     _model.userNameFocusNode ??= FocusNode();
 
@@ -172,6 +174,10 @@ class _CreateYourProfileWidgetState extends State<CreateYourProfileWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent(
+                                  'CREATE_YOUR_PROFILE_Container_ezqkrhcj_O');
+                              logFirebaseEvent(
+                                  'Container_upload_media_to_firebase');
                               final selectedMedia =
                                   await selectMediaWithSourceBottomSheet(
                                 context: context,
@@ -469,12 +475,17 @@ class _CreateYourProfileWidgetState extends State<CreateYourProfileWidget> {
                               0.0, 0.0, 0.0, 40.0),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              logFirebaseEvent(
+                                  'CREATE_YOUR_PROFILE_COMPLETE_SETUP_BTN_O');
+                              logFirebaseEvent('Button_backend_call');
+
                               await currentUserReference!
                                   .update(createUsersRecordData(
                                 userName: _model.userNameTextController.text,
                                 photoUrl: _model.uploadedFileUrl,
                                 bio: _model.bioTextController.text,
                               ));
+                              logFirebaseEvent('Button_navigate_to');
 
                               context.goNamed('onboardingAge');
                             },

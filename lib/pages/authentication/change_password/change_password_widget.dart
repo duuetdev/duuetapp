@@ -26,6 +26,8 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
     super.initState();
     _model = createModel(context, () => ChangePasswordModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'changePassword'});
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
@@ -58,6 +60,8 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
+                  logFirebaseEvent('CHANGE_PASSWORD_Icon_yu38f4tw_ON_TAP');
+                  logFirebaseEvent('Icon_navigate_back');
                   context.pop();
                 },
                 child: Icon(
@@ -110,6 +114,9 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                           size: 25.0,
                         ),
                         onPressed: () async {
+                          logFirebaseEvent(
+                              'CHANGE_PASSWORD_arrow_back_rounded_ICN_O');
+                          logFirebaseEvent('IconButton_navigate_back');
                           context.pop();
                         },
                       ),
@@ -211,6 +218,9 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent(
+                          'CHANGE_PASSWORD_PAGE_Button-Login_ON_TAP');
+                      logFirebaseEvent('Button-Login_auth');
                       if (_model.emailAddressTextController.text.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(

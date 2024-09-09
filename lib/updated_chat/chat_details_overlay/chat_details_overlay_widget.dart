@@ -190,7 +190,12 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                         child: DeleteDialogWidget(
                           chatList: widget!.chatRef,
                           action: () async {
+                            logFirebaseEvent(
+                                'CHAT_DETAILS_OVERLAY_Container_5huap8xp_');
+                            logFirebaseEvent(
+                                'deleteDialog_close_dialog_drawer_etc');
                             Navigator.pop(context);
+                            logFirebaseEvent('deleteDialog_navigate_to');
 
                             context.pushNamed(
                               'chat_2_InviteUsers',
@@ -212,7 +217,11 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                             );
                           },
                           deleteAction: () async {
+                            logFirebaseEvent(
+                                'CHAT_DETAILS_OVERLAY_Container_5huap8xp_');
+                            logFirebaseEvent('deleteDialog_backend_call');
                             await widget!.chatRef!.reference.delete();
+                            logFirebaseEvent('deleteDialog_show_snack_bar');
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(
@@ -231,6 +240,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                                     FlutterFlowTheme.of(context).error,
                               ),
                             );
+                            logFirebaseEvent('deleteDialog_navigate_to');
 
                             context.pushNamed(
                               'main_Chat',
@@ -258,6 +268,8 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                       EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 44.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent('CHAT_DETAILS_OVERLAY_CLOSE_BTN_ON_TAP');
+                      logFirebaseEvent('Button_bottom_sheet');
                       Navigator.pop(context);
                     },
                     text: 'Close',

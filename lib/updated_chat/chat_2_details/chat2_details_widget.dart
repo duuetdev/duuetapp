@@ -39,8 +39,12 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
     super.initState();
     _model = createModel(context, () => Chat2DetailsModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'chat_2_Details'});
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('CHAT_2_DETAILS_chat_2_Details_ON_INIT_ST');
+      logFirebaseEvent('chat_2_Details_backend_call');
       unawaited(
         () async {
           await widget!.chatRef!.reference.update({
@@ -91,6 +95,10 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                     size: 30.0,
                   ),
                   onPressed: () async {
+                    logFirebaseEvent(
+                        'CHAT_2_DETAILS_arrow_back_rounded_ICN_ON');
+                    logFirebaseEvent('IconButton_navigate_to');
+
                     context.goNamed(
                       'main_Chat',
                       extra: <String, dynamic>{
@@ -409,6 +417,9 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                         size: 24.0,
                       ),
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'CHAT_2_DETAILS_PAGE_more_vert_ICN_ON_TAP');
+                        logFirebaseEvent('IconButton_bottom_sheet');
                         await showModalBottomSheet(
                           isScrollControlled: true,
                           backgroundColor: FlutterFlowTheme.of(context).accent4,

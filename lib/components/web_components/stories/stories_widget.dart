@@ -324,6 +324,10 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                                               ),
                                                               onPressed:
                                                                   () async {
+                                                                logFirebaseEvent(
+                                                                    'STORIES_COMP_more_vert_ICN_ON_TAP');
+                                                                logFirebaseEvent(
+                                                                    'IconButton_bottom_sheet');
                                                                 await showModalBottomSheet(
                                                                   isScrollControlled:
                                                                       true,
@@ -388,6 +392,10 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                                             ),
                                                             onPressed:
                                                                 () async {
+                                                              logFirebaseEvent(
+                                                                  'STORIES_COMP_close_rounded_ICN_ON_TAP');
+                                                              logFirebaseEvent(
+                                                                  'IconButton_navigate_back');
                                                               context.pop();
                                                             },
                                                           ),
@@ -461,6 +469,10 @@ class _StoriesWidgetState extends State<StoriesWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
+                                      logFirebaseEvent(
+                                          'STORIES_COMP_commentSection_ON_TAP');
+                                      logFirebaseEvent(
+                                          'commentSection_bottom_sheet');
                                       await showModalBottomSheet(
                                         isScrollControlled: true,
                                         backgroundColor:

@@ -41,6 +41,7 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
     with TickerProviderStateMixin {
   late PostDetailsBaseModel _model;
 
+  var hasIconTriggered = false;
   final animationsMap = <String, AnimationInfo>{};
 
   @override
@@ -58,6 +59,19 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
     _model.textFieldFocusNode ??= FocusNode();
 
     animationsMap.addAll({
+      'iconOnActionTriggerAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(1.2, 1.0),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
       'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -86,6 +100,12 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
         ],
       ),
     });
+    setupAnimations(
+      animationsMap.values.where((anim) =>
+          anim.trigger == AnimationTrigger.onActionTrigger ||
+          !anim.applyInitialState),
+      this,
+    );
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -191,6 +211,10 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
                                       size: 25.0,
                                     ),
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'POST_DETAILS_BASE_arrow_back_rounded_ICN');
+                                      logFirebaseEvent(
+                                          'IconButton_navigate_back');
                                       context.safePop();
                                     },
                                   ),
@@ -211,6 +235,10 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
                                       size: 24.0,
                                     ),
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'POST_DETAILS_BASE_more_vert_sharp_ICN_ON');
+                                      logFirebaseEvent(
+                                          'IconButton_bottom_sheet');
                                       showModalBottomSheet(
                                         isScrollControlled: true,
                                         backgroundColor: Color(0x00000000),
@@ -248,6 +276,10 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
+                            logFirebaseEvent(
+                                'POST_DETAILS_BASE_COMP_userInfo_ON_TAP');
+                            logFirebaseEvent('userInfo_navigate_to');
+
                             context.pushNamed(
                               'viewProfilePageOther',
                               queryParameters: {
@@ -291,7 +323,11 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.pushNamed('main_Profile');
+                                      logFirebaseEvent(
+                                          'POST_DETAILS_BASE_Image_wsgfsf7t_ON_TAP');
+                                      logFirebaseEvent('Image_navigate_to');
+
+                                      context.pushNamed('viewProfilePageOther');
                                     },
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(44.0),
@@ -373,13 +409,8 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: Text(
-                                  valueOrDefault<String>(
-                                    containerUserPostsRecord.postDescription,
-                                    '--',
-                                  ).maybeHandleOverflow(
-                                    maxChars: 200,
-                                    replacement: '…',
-                                  ),
+                                  containerUserPostsRecord.postDescription
+                                      .maybeHandleOverflow(maxChars: 100000),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
@@ -470,11 +501,51 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Icon(
-                                      Icons.mode_comment_outlined,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 24.0,
+                                    Container(
+                                      width: 41.0,
+                                      height: 41.0,
+                                      child: Stack(
+                                        children: [
+                                          if (containerUserPostsRecord
+                                                  .numComments <=
+                                              0)
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.25),
+                                              child: Icon(
+                                                Icons.mode_comment_outlined,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 25.0,
+                                              ),
+                                            ),
+                                          if (containerUserPostsRecord
+                                                  .numComments >
+                                              0)
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.25),
+                                              child: Icon(
+                                                Icons.mode_comment,
+                                                color: containerUserPostsRecord
+                                                            .numComments >
+                                                        0
+                                                    ? FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary
+                                                    : FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                size: 25.0,
+                                              ).animateOnActionTrigger(
+                                                  animationsMap[
+                                                      'iconOnActionTriggerAnimation']!,
+                                                  hasBeenTriggered:
+                                                      hasIconTriggered),
+                                            ),
+                                        ],
+                                      ),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -510,6 +581,9 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
+                                      logFirebaseEvent(
+                                          'POST_DETAILS_BASE_Icon_5wrnqezs_ON_TAP');
+                                      logFirebaseEvent('Icon_share');
                                       await Share.share(
                                         valueOrDefault<String>(
                                           'Found this helpful tip on Duuet that I think you’ll love! 🌟 Here’s a quick snippet:${'\n'}${containerUserPostsRecord.postDescription}${'\n'}Want more personalized skin and hair care tips like this? Join me on Duuet, India’s leading community for all things skin and hair care. Connect, learn, and share!',
@@ -697,8 +771,13 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
                                                         highlightColor:
                                                             Colors.transparent,
                                                         onTap: () async {
+                                                          logFirebaseEvent(
+                                                              'POST_DETAILS_BASE_Image_ky8dic7y_ON_TAP');
+                                                          logFirebaseEvent(
+                                                              'Image_navigate_to');
+
                                                           context.pushNamed(
-                                                              'main_Profile');
+                                                              'viewProfilePageOther');
                                                         },
                                                         child: ClipRRect(
                                                           borderRadius:
@@ -742,25 +821,45 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
                                                             CrossAxisAlignment
                                                                 .start,
                                                         children: [
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              commentUsersRecord
-                                                                  .userName,
-                                                              'My Name Here',
+                                                          InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              logFirebaseEvent(
+                                                                  'POST_DETAILS_BASE_Text_iedk8qn5_ON_TAP');
+                                                              logFirebaseEvent(
+                                                                  'Text_navigate_to');
+
+                                                              context.pushNamed(
+                                                                  'viewProfilePageOther');
+                                                            },
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                commentUsersRecord
+                                                                    .userName,
+                                                                'My Name Here',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Figtree',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Figtree',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
                                                           ),
                                                           Padding(
                                                             padding:
@@ -972,11 +1071,15 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
                                     0.0, 0.0, 4.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'POST_DETAILS_BASE_COMP_POST_BTN_ON_TAP');
+                                    logFirebaseEvent('Button_validate_form');
                                     if (_model.formKey.currentState == null ||
                                         !_model.formKey.currentState!
                                             .validate()) {
                                       return;
                                     }
+                                    logFirebaseEvent('Button_backend_call');
 
                                     var postCommentsRecordReference =
                                         PostCommentsRecord.collection.doc();
@@ -998,9 +1101,12 @@ class _PostDetailsBaseWidgetState extends State<PostDetailsBaseWidget>
                                                   .reference,
                                             ),
                                             postCommentsRecordReference);
+                                    logFirebaseEvent(
+                                        'Button_clear_text_fields_pin_codes');
                                     safeSetState(() {
                                       _model.textController?.clear();
                                     });
+                                    logFirebaseEvent('Button_backend_call');
 
                                     await containerUserPostsRecord.reference
                                         .update({

@@ -29,6 +29,8 @@ class _OnboardingConcernsWidgetState extends State<OnboardingConcernsWidget> {
     super.initState();
     _model = createModel(context, () => OnboardingConcernsModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'onboardingConcerns'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -234,12 +236,17 @@ class _OnboardingConcernsWidgetState extends State<OnboardingConcernsWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'ONBOARDING_CONCERNS_PAGE_NEXT_BTN_ON_TAP');
                         if ((_model.checkboxListTileValue1 == true) &&
                             (_model.checkboxListTileValue2 == false)) {
+                          logFirebaseEvent('Button_backend_call');
+
                           await currentUserReference!
                               .update(createUsersRecordData(
                             concern: UserConcern.Skincare,
                           ));
+                          logFirebaseEvent('Button_navigate_to');
 
                           context.pushNamed('onboardingSkinCare');
 
@@ -247,22 +254,29 @@ class _OnboardingConcernsWidgetState extends State<OnboardingConcernsWidget> {
                         } else {
                           if ((_model.checkboxListTileValue2 == true) &&
                               (_model.checkboxListTileValue1 == false)) {
+                            logFirebaseEvent('Button_backend_call');
+
                             await currentUserReference!
                                 .update(createUsersRecordData(
                               concern: UserConcern.Haircare,
                             ));
+                            logFirebaseEvent('Button_navigate_to');
 
                             context.pushNamed('onboardingHairCare');
                           } else {
                             if ((_model.checkboxListTileValue1 == true) &&
                                 (_model.checkboxListTileValue2 == true)) {
+                              logFirebaseEvent('Button_backend_call');
+
                               await currentUserReference!
                                   .update(createUsersRecordData(
                                 concern: UserConcern.Both,
                               ));
+                              logFirebaseEvent('Button_navigate_to');
 
                               context.pushNamed('onboardingSkinCare');
                             } else {
+                              logFirebaseEvent('Button_show_snack_bar');
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text(

@@ -53,6 +53,8 @@ class _ViewProfilePageOtherWidgetState extends State<ViewProfilePageOtherWidget>
     super.initState();
     _model = createModel(context, () => ViewProfilePageOtherModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'viewProfilePageOther'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,
@@ -144,6 +146,9 @@ class _ViewProfilePageOtherWidgetState extends State<ViewProfilePageOtherWidget>
                       size: 25.0,
                     ),
                     onPressed: () async {
+                      logFirebaseEvent(
+                          'VIEW_PROFILE_OTHER_arrow_back_rounded_IC');
+                      logFirebaseEvent('IconButton_navigate_back');
                       context.pop();
                     },
                   ),
@@ -214,6 +219,11 @@ class _ViewProfilePageOtherWidgetState extends State<ViewProfilePageOtherWidget>
                                               size: 22.0,
                                             ),
                                             onPressed: () async {
+                                              logFirebaseEvent(
+                                                  'VIEW_PROFILE_OTHER_home_rounded_ICN_ON_T');
+                                              logFirebaseEvent(
+                                                  'IconButton_navigate_to');
+
                                               context.pushNamed(
                                                 'main_Feed',
                                                 extra: <String, dynamic>{
@@ -366,31 +376,19 @@ class _ViewProfilePageOtherWidgetState extends State<ViewProfilePageOtherWidget>
                                             ),
                                             child: Padding(
                                               padding: EdgeInsets.all(2.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  context.pushNamed(
-                                                      'main_Profile');
-                                                },
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          44.0),
-                                                  child: CachedNetworkImage(
-                                                    fadeInDuration: Duration(
-                                                        milliseconds: 500),
-                                                    fadeOutDuration: Duration(
-                                                        milliseconds: 500),
-                                                    imageUrl: widget!
-                                                        .userDetails!.photoUrl,
-                                                    width: 40.0,
-                                                    height: 40.0,
-                                                    fit: BoxFit.cover,
-                                                  ),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(44.0),
+                                                child: CachedNetworkImage(
+                                                  fadeInDuration: Duration(
+                                                      milliseconds: 500),
+                                                  fadeOutDuration: Duration(
+                                                      milliseconds: 500),
+                                                  imageUrl: widget!
+                                                      .userDetails!.photoUrl,
+                                                  width: 40.0,
+                                                  height: 40.0,
+                                                  fit: BoxFit.cover,
                                                 ),
                                               ),
                                             ),
@@ -503,6 +501,10 @@ class _ViewProfilePageOtherWidgetState extends State<ViewProfilePageOtherWidget>
                                                           16.0, 12.0),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
+                                                      logFirebaseEvent(
+                                                          'VIEW_PROFILE_OTHER_unfollow_ON_TAP');
+                                                      logFirebaseEvent(
+                                                          'unfollow_backend_call');
                                                       unawaited(
                                                         () async {
                                                           await stackFriendsRecord!
@@ -510,6 +512,8 @@ class _ViewProfilePageOtherWidgetState extends State<ViewProfilePageOtherWidget>
                                                               .delete();
                                                         }(),
                                                       );
+                                                      logFirebaseEvent(
+                                                          'unfollow_show_snack_bar');
                                                       ScaffoldMessenger.of(
                                                               context)
                                                           .showSnackBar(
@@ -592,6 +596,11 @@ class _ViewProfilePageOtherWidgetState extends State<ViewProfilePageOtherWidget>
                                                           16.0, 12.0),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
+                                                      logFirebaseEvent(
+                                                          'VIEW_PROFILE_OTHER_follow_ON_TAP');
+                                                      logFirebaseEvent(
+                                                          'follow_backend_call');
+
                                                       var friendsRecordReference =
                                                           FriendsRecord
                                                               .collection
@@ -700,6 +709,11 @@ class _ViewProfilePageOtherWidgetState extends State<ViewProfilePageOtherWidget>
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
+                                                    logFirebaseEvent(
+                                                        'VIEW_PROFILE_OTHER_Card_qpk1mzh6_ON_TAP');
+                                                    logFirebaseEvent(
+                                                        'Card_navigate_to');
+
                                                     context.pushNamed(
                                                       'othersConditionsPage',
                                                       queryParameters: {
@@ -818,6 +832,139 @@ class _ViewProfilePageOtherWidgetState extends State<ViewProfilePageOtherWidget>
                                                 ),
                                               ),
                                             ],
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Expanded(
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                logFirebaseEvent(
+                                                    'VIEW_PROFILE_OTHER_Card_rr7fjfos_ON_TAP');
+                                                logFirebaseEvent(
+                                                    'Card_navigate_to');
+
+                                                context.pushNamed(
+                                                  'myClinicalProfile',
+                                                  queryParameters: {
+                                                    'userRef': serializeParam(
+                                                      viewProfilePageOtherUsersRecord,
+                                                      ParamType.Document,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    'userRef':
+                                                        viewProfilePageOtherUsersRecord,
+                                                  },
+                                                );
+                                              },
+                                              child: Card(
+                                                clipBehavior:
+                                                    Clip.antiAliasWithSaveLayer,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                elevation: 5.0,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(10.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    10.0,
+                                                                    0.0),
+                                                        child: Card(
+                                                          clipBehavior: Clip
+                                                              .antiAliasWithSaveLayer,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          elevation: 0.0,
+                                                          shape:
+                                                              RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0),
+                                                            child: Icon(
+                                                              Icons.person,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              size: 40.0,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        'Clinical Profile',
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Figtree',
+                                                              fontSize: 18.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                            ),
+                                                      ),
+                                                      Flexible(
+                                                        child: Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  1.0, 0.0),
+                                                          child: Icon(
+                                                            Icons.arrow_right,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -1005,6 +1152,11 @@ class _ViewProfilePageOtherWidgetState extends State<ViewProfilePageOtherWidget>
                                                           highlightColor: Colors
                                                               .transparent,
                                                           onTap: () async {
+                                                            logFirebaseEvent(
+                                                                'VIEW_PROFILE_OTHER_Column_n49ilsnp_ON_TA');
+                                                            logFirebaseEvent(
+                                                                'Column_navigate_to');
+
                                                             context.pushNamed(
                                                               'postDetails_Page',
                                                               queryParameters: {
@@ -1082,30 +1234,17 @@ class _ViewProfilePageOtherWidgetState extends State<ViewProfilePageOtherWidget>
                                                                           padding:
                                                                               EdgeInsets.all(2.0),
                                                                           child:
-                                                                              InkWell(
-                                                                            splashColor:
-                                                                                Colors.transparent,
-                                                                            focusColor:
-                                                                                Colors.transparent,
-                                                                            hoverColor:
-                                                                                Colors.transparent,
-                                                                            highlightColor:
-                                                                                Colors.transparent,
-                                                                            onTap:
-                                                                                () async {
-                                                                              context.pushNamed('main_Profile');
-                                                                            },
+                                                                              ClipRRect(
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(44.0),
                                                                             child:
-                                                                                ClipRRect(
-                                                                              borderRadius: BorderRadius.circular(44.0),
-                                                                              child: CachedNetworkImage(
-                                                                                fadeInDuration: Duration(milliseconds: 500),
-                                                                                fadeOutDuration: Duration(milliseconds: 500),
-                                                                                imageUrl: userPostUsersRecord.photoUrl,
-                                                                                width: 40.0,
-                                                                                height: 40.0,
-                                                                                fit: BoxFit.cover,
-                                                                              ),
+                                                                                CachedNetworkImage(
+                                                                              fadeInDuration: Duration(milliseconds: 500),
+                                                                              fadeOutDuration: Duration(milliseconds: 500),
+                                                                              imageUrl: userPostUsersRecord.photoUrl,
+                                                                              width: 40.0,
+                                                                              height: 40.0,
+                                                                              fit: BoxFit.cover,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1322,6 +1461,8 @@ class _ViewProfilePageOtherWidgetState extends State<ViewProfilePageOtherWidget>
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
+                                                                              logFirebaseEvent('VIEW_PROFILE_OTHER_Icon_finhq5zy_ON_TAP');
+                                                                              logFirebaseEvent('Icon_share');
                                                                               await Share.share(
                                                                                 valueOrDefault<String>(
                                                                                   'Found this helpful tip on Duuet that I think you’ll love! 🌟 Here’s a quick snippet:${'\n'}${socialFeedUserPostsRecord.postDescription}${'\n'}Want more personalized skin and hair care tips like this? Join me on Duuet, India’s leading community for all things skin and hair care. Connect, learn, and share!',

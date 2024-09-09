@@ -56,3 +56,7 @@ export '/my_conditions_page/my_conditions_page_widget.dart'
     show MyConditionsPageWidget;
 export '/others_conditions_page/others_conditions_page_widget.dart'
     show OthersConditionsPageWidget;
+export '/my_clinical_profile/my_clinical_profile_widget.dart'
+    show MyClinicalProfileWidget;
+export '/others_clinical_profile/others_clinical_profile_widget.dart'
+    show OthersClinicalProfileWidget;

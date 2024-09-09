@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/empty_list_1/empty_list1_widget.dart';
 import '/components/user_list/user_list_widget.dart';
 import '/components/web_components/side_nav/side_nav_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -34,6 +35,8 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
     super.initState();
     _model = createModel(context, () => MainProfileModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'main_Profile'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,
@@ -109,32 +112,7 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                 0.0, 32.0, 0.0, 12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 8.0, 0.0),
-                                  child: Icon(
-                                    Icons.alternate_email_rounded,
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    size: 44.0,
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 12.0, 0.0),
-                                    child: Text(
-                                      'treads.io',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                              children: [],
                             ),
                           ),
                         Expanded(
@@ -206,37 +184,23 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                             child: Padding(
                                               padding: EdgeInsets.all(2.0),
                                               child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    context.pushNamed(
-                                                        'main_Profile');
-                                                  },
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            44.0),
-                                                    child: CachedNetworkImage(
-                                                      fadeInDuration: Duration(
-                                                          milliseconds: 500),
-                                                      fadeOutDuration: Duration(
-                                                          milliseconds: 500),
-                                                      imageUrl: valueOrDefault<
-                                                          String>(
-                                                        currentUserPhoto,
-                                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/wn636nykq7im/lucrezia-carnelos-0liYTl4dJxk-unsplash.jpg',
-                                                      ),
-                                                      width: 40.0,
-                                                      height: 40.0,
-                                                      fit: BoxFit.cover,
+                                                builder: (context) => ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          44.0),
+                                                  child: CachedNetworkImage(
+                                                    fadeInDuration: Duration(
+                                                        milliseconds: 500),
+                                                    fadeOutDuration: Duration(
+                                                        milliseconds: 500),
+                                                    imageUrl:
+                                                        valueOrDefault<String>(
+                                                      currentUserPhoto,
+                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/wn636nykq7im/lucrezia-carnelos-0liYTl4dJxk-unsplash.jpg',
                                                     ),
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    fit: BoxFit.cover,
                                                   ),
                                                 ),
                                               ),
@@ -298,6 +262,10 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                       16.0, 12.0, 16.0, 8.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'MAIN_PROFILE_PAGE_SETTINGS_BTN_ON_TAP');
+                                      logFirebaseEvent('Button_navigate_to');
+
                                       context.pushNamed(
                                         'editSettings',
                                         extra: <String, dynamic>{
@@ -338,23 +306,27 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                     ),
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 10.0, 0.0, 5.0),
-                                  child: Text(
-                                    'Medical Profile',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Figtree',
-                                          fontSize: 22.0,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
                                 Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            5.0, 10.0, 0.0, 5.0),
+                                        child: Text(
+                                          'Medical Profile',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Figtree',
+                                                fontSize: 22.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -365,6 +337,11 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
+                                              logFirebaseEvent(
+                                                  'MAIN_PROFILE_PAGE_Card_b98p2hep_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'Card_navigate_to');
+
                                               context.pushNamed(
                                                 'myConditionsPage',
                                                 queryParameters: {
@@ -443,6 +420,135 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                                     ),
                                                     Text(
                                                       'My Conditions',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Figtree',
+                                                            fontSize: 18.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                    Flexible(
+                                                      child: Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                1.0, 0.0),
+                                                        child: Icon(
+                                                          Icons.arrow_right,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          size: 24.0,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              logFirebaseEvent(
+                                                  'MAIN_PROFILE_PAGE_Card_s8jian5g_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'Card_navigate_to');
+
+                                              context.pushNamed(
+                                                'myClinicalProfile',
+                                                queryParameters: {
+                                                  'userRef': serializeParam(
+                                                    mainProfileUsersRecord,
+                                                    ParamType.Document,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  'userRef':
+                                                      mainProfileUsersRecord,
+                                                },
+                                              );
+                                            },
+                                            child: Card(
+                                              clipBehavior:
+                                                  Clip.antiAliasWithSaveLayer,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              elevation: 5.0,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsets.all(10.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0),
+                                                      child: Card(
+                                                        clipBehavior: Clip
+                                                            .antiAliasWithSaveLayer,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        elevation: 0.0,
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      1.0,
+                                                                      1.0,
+                                                                      1.0,
+                                                                      1.0),
+                                                          child: Icon(
+                                                            Icons.person,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            size: 40.0,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      'My Clinical Profile',
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -573,15 +679,7 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                                   if (socialFeedUserPostsRecordList
                                                       .isEmpty) {
                                                     return Center(
-                                                      child: Image.asset(
-                                                        'assets/images/emptyPosts@2x.png',
-                                                        width:
-                                                            MediaQuery.sizeOf(
-                                                                        context)
-                                                                    .width *
-                                                                0.5,
-                                                        height: 400.0,
-                                                      ),
+                                                      child: EmptyList1Widget(),
                                                     );
                                                   }
 
@@ -681,6 +779,11 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                                                         .transparent,
                                                                 onTap:
                                                                     () async {
+                                                                  logFirebaseEvent(
+                                                                      'MAIN_PROFILE_PAGE_Column_114kwovl_ON_TAP');
+                                                                  logFirebaseEvent(
+                                                                      'Column_navigate_to');
+
                                                                   context
                                                                       .pushNamed(
                                                                     'postDetails_Page',
@@ -746,24 +849,15 @@ class _MainProfileWidgetState extends State<MainProfileWidget>
                                                                               ),
                                                                               child: Padding(
                                                                                 padding: EdgeInsets.all(2.0),
-                                                                                child: InkWell(
-                                                                                  splashColor: Colors.transparent,
-                                                                                  focusColor: Colors.transparent,
-                                                                                  hoverColor: Colors.transparent,
-                                                                                  highlightColor: Colors.transparent,
-                                                                                  onTap: () async {
-                                                                                    context.pushNamed('main_Profile');
-                                                                                  },
-                                                                                  child: ClipRRect(
-                                                                                    borderRadius: BorderRadius.circular(44.0),
-                                                                                    child: CachedNetworkImage(
-                                                                                      fadeInDuration: Duration(milliseconds: 500),
-                                                                                      fadeOutDuration: Duration(milliseconds: 500),
-                                                                                      imageUrl: userPostUsersRecord.photoUrl,
-                                                                                      width: 40.0,
-                                                                                      height: 40.0,
-                                                                                      fit: BoxFit.cover,
-                                                                                    ),
+                                                                                child: ClipRRect(
+                                                                                  borderRadius: BorderRadius.circular(44.0),
+                                                                                  child: CachedNetworkImage(
+                                                                                    fadeInDuration: Duration(milliseconds: 500),
+                                                                                    fadeOutDuration: Duration(milliseconds: 500),
+                                                                                    imageUrl: userPostUsersRecord.photoUrl,
+                                                                                    width: 40.0,
+                                                                                    height: 40.0,
+                                                                                    fit: BoxFit.cover,
                                                                                   ),
                                                                                 ),
                                                                               ),

@@ -34,6 +34,8 @@ class _PostDetailsPageWidgetState extends State<PostDetailsPageWidget> {
     super.initState();
     _model = createModel(context, () => PostDetailsPageModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'postDetails_Page'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 

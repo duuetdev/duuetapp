@@ -35,6 +35,8 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
     super.initState();
     _model = createModel(context, () => EditDogProfileModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'editDogProfile'});
     _model.dogNameTextController ??=
         TextEditingController(text: widget!.dogProfile?.dogName);
     _model.dogNameFocusNode ??= FocusNode();
@@ -104,6 +106,9 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                       size: 25.0,
                     ),
                     onPressed: () async {
+                      logFirebaseEvent(
+                          'EDIT_DOG_PROFILE_arrow_back_rounded_ICN_');
+                      logFirebaseEvent('IconButton_navigate_back');
                       context.pop();
                     },
                   ),
@@ -170,6 +175,9 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
+                            logFirebaseEvent(
+                                'EDIT_DOG_PROFILE_Image_w4v999m7_ON_TAP');
+                            logFirebaseEvent('Image_upload_media_to_firebase');
                             final selectedMedia =
                                 await selectMediaWithSourceBottomSheet(
                               context: context,
@@ -510,6 +518,10 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                                   0.0, 0.0, 0.0, 40.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'EDIT_DOG_PROFILE_SAVE_CHANGES_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_backend_call');
+
                                   await widget!.dogProfile!.reference
                                       .update(createDogsRecordData(
                                     dogPhoto: _model.uploadedFileUrl,
@@ -517,6 +529,7 @@ class _EditDogProfileWidgetState extends State<EditDogProfileWidget> {
                                     dogType: _model.dogBreedTextController.text,
                                     dogAge: _model.dogAgeTextController.text,
                                   ));
+                                  logFirebaseEvent('Button_navigate_back');
                                   context.pop();
                                 },
                                 text: 'Save Changes',

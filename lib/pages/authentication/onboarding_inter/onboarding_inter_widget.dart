@@ -24,6 +24,8 @@ class _OnboardingInterWidgetState extends State<OnboardingInterWidget> {
     super.initState();
     _model = createModel(context, () => OnboardingInterModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'onboardingInter'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -114,6 +116,10 @@ class _OnboardingInterWidgetState extends State<OnboardingInterWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'ONBOARDING_INTER_PAGE_NEXT_BTN_ON_TAP');
+                        logFirebaseEvent('Button_navigate_to');
+
                         context.goNamed('onboardingConcerns');
                       },
                       text: 'Next',

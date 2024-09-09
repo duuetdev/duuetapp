@@ -31,6 +31,8 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
     super.initState();
     _model = createModel(context, () => CreateDogProfileNewModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'createDogProfile_New'});
     _model.dogNameTextController ??= TextEditingController();
     _model.dogNameFocusNode ??= FocusNode();
 
@@ -82,6 +84,9 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                     size: 30.0,
                   ),
                   onPressed: () async {
+                    logFirebaseEvent(
+                        'CREATE_DOG_PROFILE_NEW_close_rounded_ICN');
+                    logFirebaseEvent('IconButton_navigate_back');
                     context.pop();
                   },
                 ),
@@ -137,6 +142,9 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
+                      logFirebaseEvent(
+                          'CREATE_DOG_PROFILE_NEW_Image_m236q23v_ON');
+                      logFirebaseEvent('Image_upload_media_to_firebase');
                       final selectedMedia =
                           await selectMediaWithSourceBottomSheet(
                         context: context,
@@ -451,6 +459,9 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 40.0),
               child: FFButtonWidget(
                 onPressed: () async {
+                  logFirebaseEvent('CREATE_DOG_PROFILE_NEW_ADD_PUP_BTN_ON_TA');
+                  logFirebaseEvent('Button_backend_call');
+
                   await DogsRecord.collection.doc().set(createDogsRecordData(
                         userAssociation: currentUserReference,
                         dogPhoto: _model.uploadedFileUrl,
@@ -458,6 +469,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                         dogType: _model.dogBreedTextController.text,
                         dogAge: _model.dogAgeTextController.text,
                       ));
+                  logFirebaseEvent('Button_navigate_back');
                   context.pop();
                 },
                 text: 'Add Pup',

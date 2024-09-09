@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/delete_account_sheet/delete_account_sheet_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -34,6 +35,8 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget>
     super.initState();
     _model = createModel(context, () => EditSettingsModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'editSettings'});
     animationsMap.addAll({
       'containerOnActionTriggerAnimation': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
@@ -126,6 +129,9 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget>
                         size: 30.0,
                       ),
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'EDIT_SETTINGS_close_rounded_ICN_ON_TAP');
+                        logFirebaseEvent('IconButton_navigate_back');
                         context.pop();
                       },
                     ),
@@ -181,6 +187,9 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget>
                                   size: 25.0,
                                 ),
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'EDIT_SETTINGS_arrow_back_rounded_ICN_ON_');
+                                  logFirebaseEvent('IconButton_navigate_back');
                                   context.pop();
                                 },
                               ),
@@ -310,6 +319,10 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget>
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'EDIT_SETTINGS_PAGE_Row_legjguly_ON_TAP');
+                                logFirebaseEvent('Row_navigate_to');
+
                                 context.pushNamed('editUserProfile');
                               },
                               child: Row(
@@ -361,6 +374,10 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent(
+                                  'EDIT_SETTINGS_PAGE_Row_n2pjcwqv_ON_TAP');
+                              logFirebaseEvent('Row_navigate_to');
+
                               context.pushNamed('changePassword');
                             },
                             child: Row(
@@ -385,6 +402,177 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget>
                                   child: Icon(
                                     Icons.arrow_forward_ios,
                                     color: Color(0xFF95A1AC),
+                                    size: 18.0,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 50.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          shape: BoxShape.rectangle,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 16.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              logFirebaseEvent(
+                                  'EDIT_SETTINGS_PAGE_Row_lrajh7ya_ON_TAP');
+                              logFirebaseEvent('Row_launch_u_r_l');
+                              await launchURL(
+                                  'https://www.duuet.care/privacy-policy');
+                            },
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      24.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Privacy Policy',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Figtree',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.9, 0.0),
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Color(0xFF95A1AC),
+                                    size: 18.0,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 50.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          shape: BoxShape.rectangle,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 16.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              logFirebaseEvent(
+                                  'EDIT_SETTINGS_PAGE_Row_xnfd57ku_ON_TAP');
+                              logFirebaseEvent('Row_launch_u_r_l');
+                              await launchURL(
+                                  'https://www.duuet.care/terms-conditions');
+                            },
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      24.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Terms & Conditions',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Figtree',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.9, 0.0),
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Color(0xFF95A1AC),
+                                    size: 18.0,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 50.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          shape: BoxShape.rectangle,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 16.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              logFirebaseEvent(
+                                  'EDIT_SETTINGS_PAGE_Row_0a9byutm_ON_TAP');
+                              logFirebaseEvent('Row_bottom_sheet');
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.transparent,
+                                enableDrag: false,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: DeleteAccountSheetWidget(),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
+                            },
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      24.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Delete Account',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Figtree',
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.9, 0.0),
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: FlutterFlowTheme.of(context).error,
                                     size: 18.0,
                                   ),
                                 ),
@@ -422,6 +610,10 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget>
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  logFirebaseEvent(
+                                      'EDIT_SETTINGS_Container_5p8ful6l_ON_TAP');
+                                  logFirebaseEvent(
+                                      'Container_set_dark_mode_settings');
                                   setDarkModeSetting(context, ThemeMode.light);
                                 },
                                 child: Container(
@@ -496,6 +688,10 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget>
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  logFirebaseEvent(
+                                      'EDIT_SETTINGS_Container_5sie3z17_ON_TAP');
+                                  logFirebaseEvent(
+                                      'Container_set_dark_mode_settings');
                                   setDarkModeSetting(context, ThemeMode.dark);
                                 },
                                 child: Container(
@@ -586,6 +782,9 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget>
                                 2.0, 24.0, 0.0, 12.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'EDIT_SETTINGS_PAGE_LOG_OUT_BTN_ON_TAP');
+                                logFirebaseEvent('Button_auth');
                                 GoRouter.of(context).prepareAuthEvent();
                                 await authManager.signOut();
                                 GoRouter.of(context).clearRedirectLocation();

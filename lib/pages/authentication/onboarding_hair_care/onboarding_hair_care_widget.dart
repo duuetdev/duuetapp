@@ -30,6 +30,8 @@ class _OnboardingHairCareWidgetState extends State<OnboardingHairCareWidget> {
     super.initState();
     _model = createModel(context, () => OnboardingHairCareModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'onboardingHairCare'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -164,6 +166,10 @@ class _OnboardingHairCareWidgetState extends State<OnboardingHairCareWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'ONBOARDING_HAIR_CARE_NEXT_BTN_ON_TAP');
+                        logFirebaseEvent('Button_backend_call');
+
                         await currentUserReference!.update({
                           ...mapToFirestore(
                             {
@@ -171,6 +177,7 @@ class _OnboardingHairCareWidgetState extends State<OnboardingHairCareWidget> {
                             },
                           ),
                         });
+                        logFirebaseEvent('Button_navigate_to');
 
                         context.goNamed('onboardingAnyOther');
                       },

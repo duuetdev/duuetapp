@@ -34,6 +34,8 @@ class _MyConditionsPageWidgetState extends State<MyConditionsPageWidget>
     super.initState();
     _model = createModel(context, () => MyConditionsPageModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'myConditionsPage'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,
@@ -76,6 +78,9 @@ class _MyConditionsPageWidgetState extends State<MyConditionsPageWidget>
                     size: 30.0,
                   ),
                   onPressed: () async {
+                    logFirebaseEvent(
+                        'MY_CONDITIONS_arrow_back_rounded_ICN_ON_');
+                    logFirebaseEvent('IconButton_navigate_back');
                     context.safePop();
                   },
                 ),

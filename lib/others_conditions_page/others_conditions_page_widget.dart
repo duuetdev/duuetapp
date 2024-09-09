@@ -35,6 +35,8 @@ class _OthersConditionsPageWidgetState extends State<OthersConditionsPageWidget>
     super.initState();
     _model = createModel(context, () => OthersConditionsPageModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'othersConditionsPage'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,
@@ -77,11 +79,14 @@ class _OthersConditionsPageWidgetState extends State<OthersConditionsPageWidget>
                     size: 30.0,
                   ),
                   onPressed: () async {
+                    logFirebaseEvent(
+                        'OTHERS_CONDITIONS_arrow_back_rounded_ICN');
+                    logFirebaseEvent('IconButton_navigate_back');
                     context.safePop();
                   },
                 ),
                 title: Text(
-                  'Personal Concerns',
+                  '${widget!.userRef?.userName}\'s Concerns',
                   style: FlutterFlowTheme.of(context).titleLarge.override(
                         fontFamily: 'Outfit',
                         letterSpacing: 0.0,

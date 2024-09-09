@@ -30,6 +30,9 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
     super.initState();
     _model = createModel(context, () => EditUserProfileModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'editUserProfile'});
+
     _model.yourNameFocusNode ??= FocusNode();
 
     _model.userNameFocusNode ??= FocusNode();
@@ -93,6 +96,9 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                       size: 25.0,
                     ),
                     onPressed: () async {
+                      logFirebaseEvent(
+                          'EDIT_USER_PROFILE_arrow_back_rounded_ICN');
+                      logFirebaseEvent('IconButton_navigate_back');
                       context.pop();
                     },
                   ),
@@ -159,6 +165,10 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                       size: 25.0,
                                     ),
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'EDIT_USER_PROFILE_arrow_back_rounded_ICN');
+                                      logFirebaseEvent(
+                                          'IconButton_navigate_back');
                                       context.pop();
                                     },
                                   ),
@@ -231,6 +241,10 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'EDIT_USER_PROFILE_Container_li9zfvsu_ON_');
+                                logFirebaseEvent(
+                                    'Container_upload_media_to_firebase');
                                 final selectedMedia =
                                     await selectMediaWithSourceBottomSheet(
                                   context: context,
@@ -614,12 +628,17 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                             24.0, 80.0, 24.0, 40.0),
                         child: FFButtonWidget(
                           onPressed: () async {
+                            logFirebaseEvent(
+                                'EDIT_USER_PROFILE_SAVE_CHANGES_BTN_ON_TA');
+                            logFirebaseEvent('Button_backend_call');
+
                             await currentUserReference!
                                 .update(createUsersRecordData(
                               userName: _model.userNameTextController.text,
                               photoUrl: _model.uploadedFileUrl,
                               bio: _model.bioTextController.text,
                             ));
+                            logFirebaseEvent('Button_navigate_back');
                             context.pop();
                           },
                           text: 'Save Changes',

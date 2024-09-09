@@ -92,7 +92,11 @@ class _DeletePostWidgetState extends State<DeletePostWidget> {
                     ),
                     FFButtonWidget(
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'DELETE_POST_COMP_DELETE_POST_BTN_ON_TAP');
+                        logFirebaseEvent('Button_backend_call');
                         await widget!.postParameters!.reference.delete();
+                        logFirebaseEvent('Button_navigate_to');
 
                         context.pushNamed(
                           'main_Feed',
@@ -133,6 +137,9 @@ class _DeletePostWidgetState extends State<DeletePostWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          logFirebaseEvent(
+                              'DELETE_POST_COMP_CANCEL_BTN_ON_TAP');
+                          logFirebaseEvent('Button_navigate_back');
                           context.pop();
                         },
                         text: 'Cancel',

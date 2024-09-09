@@ -33,6 +33,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
     super.initState();
     _model = createModel(context, () => CreatePostModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'createPost'});
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
@@ -79,6 +80,8 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                       size: 25.0,
                     ),
                     onPressed: () async {
+                      logFirebaseEvent('CREATE_POST_close_rounded_ICN_ON_TAP');
+                      logFirebaseEvent('IconButton_navigate_back');
                       context.pop();
                     },
                   ),
@@ -127,6 +130,10 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                               size: 22.0,
                             ),
                             onPressed: () async {
+                              logFirebaseEvent(
+                                  'CREATE_POST_PAGE_home_rounded_ICN_ON_TAP');
+                              logFirebaseEvent('IconButton_navigate_to');
+
                               context.pushNamed(
                                 'main_Feed',
                                 extra: <String, dynamic>{
@@ -209,6 +216,10 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
+                                            logFirebaseEvent(
+                                                'CREATE_POST_PAGE_userImage_ON_TAP');
+                                            logFirebaseEvent(
+                                                'userImage_upload_media_to_firebase');
                                             final selectedMedia =
                                                 await selectMediaWithSourceBottomSheet(
                                               context: context,
@@ -442,7 +453,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                   20.0, 20.0, 20.0, 12.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .titleSmall
+                                            .bodySmall
                                             .override(
                                               fontFamily: 'Figtree',
                                               letterSpacing: 0.0,
@@ -484,6 +495,10 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent(
+                          'CREATE_POST_PAGE_CREATE_POST_BTN_ON_TAP');
+                      logFirebaseEvent('Button_backend_call');
+
                       await UserPostsRecord.collection
                           .doc()
                           .set(createUserPostsRecordData(
@@ -494,6 +509,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                             timePosted: getCurrentTimestamp,
                             postOwner: true,
                           ));
+                      logFirebaseEvent('Button_navigate_to');
 
                       context.pushNamed(
                         'main_Feed',

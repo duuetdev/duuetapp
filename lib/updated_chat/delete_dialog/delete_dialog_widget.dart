@@ -46,6 +46,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('DELETE_DIALOG_deleteDialog_ON_INIT_STATE');
+      logFirebaseEvent('deleteDialog_update_component_state');
       _model.showDelete = false;
       safeSetState(() {});
     });
@@ -125,6 +127,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
+                      logFirebaseEvent('DELETE_DIALOG_COMP_wrapWidget_ON_TAP');
+                      logFirebaseEvent('wrapWidget_execute_callback');
                       await widget.action?.call();
                     },
                     child: AnimatedContainer(
@@ -191,6 +195,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
+                      logFirebaseEvent('DELETE_DIALOG_COMP_component_ON_TAP');
+                      logFirebaseEvent('component_update_component_state');
                       _model.showDelete = true;
                       safeSetState(() {});
                     },

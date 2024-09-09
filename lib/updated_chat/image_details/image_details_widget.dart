@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -40,6 +41,8 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
     super.initState();
     _model = createModel(context, () => ImageDetailsModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'image_Details'});
     animationsMap.addAll({
       'imageOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -134,6 +137,9 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
                     size: 30.0,
                   ),
                   onPressed: () async {
+                    logFirebaseEvent(
+                        'IMAGE_DETAILS_arrow_back_rounded_ICN_ON_');
+                    logFirebaseEvent('IconButton_navigate_back');
                     context.pop();
                   },
                 ),
@@ -207,8 +213,7 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
                             height: 36.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).accent1,
-                              borderRadius: BorderRadius.circular(12.0),
-                              shape: BoxShape.rectangle,
+                              shape: BoxShape.circle,
                               border: Border.all(
                                 color: FlutterFlowTheme.of(context).primary,
                                 width: 2.0,
@@ -216,15 +221,18 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
                             ),
                             child: Padding(
                               padding: EdgeInsets.all(2.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: CachedNetworkImage(
-                                  fadeInDuration: Duration(milliseconds: 200),
-                                  fadeOutDuration: Duration(milliseconds: 200),
-                                  imageUrl: otherUserUsersRecord.photoUrl,
-                                  width: 44.0,
-                                  height: 44.0,
-                                  fit: BoxFit.cover,
+                              child: AuthUserStreamWidget(
+                                builder: (context) => ClipRRect(
+                                  borderRadius: BorderRadius.circular(44.0),
+                                  child: CachedNetworkImage(
+                                    fadeInDuration: Duration(milliseconds: 500),
+                                    fadeOutDuration:
+                                        Duration(milliseconds: 500),
+                                    imageUrl: currentUserPhoto,
+                                    width: 40.0,
+                                    height: 40.0,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),

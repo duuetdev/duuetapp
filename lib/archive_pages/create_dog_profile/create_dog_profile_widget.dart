@@ -29,6 +29,8 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
     super.initState();
     _model = createModel(context, () => CreateDogProfileModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'createDogProfile'});
     _model.dogNameTextController ??= TextEditingController();
     _model.dogNameFocusNode ??= FocusNode();
 
@@ -135,6 +137,9 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
+                        logFirebaseEvent(
+                            'CREATE_DOG_PROFILE_Image_966nawev_ON_TAP');
+                        logFirebaseEvent('Image_upload_media_to_firebase');
                         final selectedMedia =
                             await selectMediaWithSourceBottomSheet(
                           context: context,
@@ -477,6 +482,10 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                               0.0, 0.0, 20.0, 40.0),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              logFirebaseEvent(
+                                  'CREATE_DOG_PROFILE_PAGE_SKIP_BTN_ON_TAP');
+                              logFirebaseEvent('Button_navigate_to');
+
                               context.goNamed('createYourProfile');
                             },
                             text: 'Skip',
@@ -509,6 +518,10 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                               0.0, 0.0, 0.0, 40.0),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              logFirebaseEvent(
+                                  'CREATE_DOG_PROFILE_SAVE__CONTINUE_BTN_ON');
+                              logFirebaseEvent('Button_backend_call');
+
                               await DogsRecord.collection
                                   .doc()
                                   .set(createDogsRecordData(
@@ -518,6 +531,7 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                                     dogType: _model.dogBreedTextController.text,
                                     dogAge: _model.dogAgeTextController.text,
                                   ));
+                              logFirebaseEvent('Button_navigate_to');
 
                               context.goNamed('createYourProfile');
                             },

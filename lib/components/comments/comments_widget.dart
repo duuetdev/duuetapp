@@ -510,8 +510,12 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                       0.0, 0.0, 4.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'COMMENTS_COMP_POST_BTN_ON_TAP');
                                       if (_model.textController.text != null &&
                                           _model.textController.text != '') {
+                                        logFirebaseEvent('Button_backend_call');
+
                                         await StoryCommentsRecord.collection
                                             .doc()
                                             .set(createStoryCommentsRecordData(
@@ -523,9 +527,12 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                   _model.textController.text,
                                               timePosted: getCurrentTimestamp,
                                             ));
+                                        logFirebaseEvent(
+                                            'Button_clear_text_fields_pin_codes');
                                         safeSetState(() {
                                           _model.textController?.clear();
                                         });
+                                        logFirebaseEvent('Button_backend_call');
 
                                         await columnUserStoriesRecord.reference
                                             .update({

@@ -29,6 +29,8 @@ class _OnboardingGenderWidgetState extends State<OnboardingGenderWidget> {
     super.initState();
     _model = createModel(context, () => OnboardingGenderModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'onboardingGender'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -204,10 +206,15 @@ class _OnboardingGenderWidgetState extends State<OnboardingGenderWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'ONBOARDING_GENDER_PAGE_NEXT_BTN_ON_TAP');
+                        logFirebaseEvent('Button_backend_call');
+
                         await currentUserReference!
                             .update(createUsersRecordData(
                           gender: _model.dropDownValue,
                         ));
+                        logFirebaseEvent('Button_navigate_to');
 
                         context.goNamed('onboardingInter');
                       },

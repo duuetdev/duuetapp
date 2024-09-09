@@ -99,6 +99,10 @@ class _UserListWidgetState extends State<UserListWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
+                          logFirebaseEvent(
+                              'USER_LIST_COMP_Image_xwn8u1ng_ON_TAP');
+                          logFirebaseEvent('Image_navigate_to');
+
                           context.pushNamed('main_Profile');
                         },
                         child: ClipRRect(

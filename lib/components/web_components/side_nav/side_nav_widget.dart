@@ -80,13 +80,13 @@ class _SideNavWidgetState extends State<SideNavWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                // Logo should go here.
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                  child: Icon(
-                    Icons.alternate_email_rounded,
-                    color: FlutterFlowTheme.of(context).info,
-                    size: 40.0,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/WhatsApp_logo.png',
+                    width: 40.0,
+                    height: 40.0,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 Divider(
@@ -103,6 +103,10 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
+                      logFirebaseEvent(
+                          'SIDE_NAV_COMP_Container_wbzdmcif_ON_TAP');
+                      logFirebaseEvent('Container_navigate_to');
+
                       context.pushNamed(
                         'main_Feed',
                         extra: <String, dynamic>{
@@ -173,6 +177,10 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
+                      logFirebaseEvent(
+                          'SIDE_NAV_COMP_Container_4bedrcy5_ON_TAP');
+                      logFirebaseEvent('Container_navigate_to');
+
                       context.pushNamed(
                         'main_Chat',
                         extra: <String, dynamic>{
@@ -240,6 +248,10 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
+                      logFirebaseEvent(
+                          'SIDE_NAV_COMP_Container_2v5i9k25_ON_TAP');
+                      logFirebaseEvent('Container_navigate_to');
+
                       context.pushNamed(
                         'main_Profile',
                         extra: <String, dynamic>{
